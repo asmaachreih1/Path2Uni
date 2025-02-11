@@ -164,7 +164,7 @@ header{
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
 }
 
-/*.Button-3{
+.Button1{
     width: 100px;
     height: 40px;
     background: transparent;
@@ -182,11 +182,32 @@ header{
     transition: .3s;
 }
 
-.Button-3:hover{
+.Button1:hover{
     background: #fff;
     color: #255784;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
 }
 
-*/
-  
+.Button2{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid floralwhite;
+    outline: none;
+    border-radius: 10px;
+    cursor:pointer;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.4s;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: .3s;
+}
+
+.Button2:hover{
+    background: #fff;
+    color: #255784;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
+}
