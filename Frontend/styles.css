@@ -86,18 +86,6 @@ header{
     border: 2px solid floralwhite;
     cursor: pointer;
     transition: 0.4s;
-     /*width: 150px;
-     height: 40px;
-    background: transparent;
-    border: 2px solid floralwhite;
-    outline: none;
-    border-radius: 10px;
-    cursor:pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.4s;*/
 }
 .navigation .btnSignUp-popup:hover{
     background: #fff;
@@ -123,51 +111,6 @@ header{
     gap: 10px; 
     
 }
-
-/*.Signup-btn{
-    display: inline-block;
-    padding: 5px 10px;
-    background: transparent; 
-    color: white;
-    text-decoration: none; 
-    font-size: 16px;
-    border-radius: 10px; 
-    border: 2px solid floralwhite;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-.Signup-btn:hover{
-    background: #fff;
-    color: #255784;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
-}
-
-.Signin-btn{
-    width: 100px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid floralwhite;
-    outline: none;
-    border-radius: 10px;
-    cursor:pointer;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.4s;
-    margin: 0 auto;
-    margin-top: 20px;
-    transition: .3s;
-}
-
-.Signin-btn:hover{
-    background: #fff;
-    color: #255784;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
-}
-*/
-
 
 .Button1{
     width: 100px;
