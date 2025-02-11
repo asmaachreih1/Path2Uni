@@ -70,8 +70,8 @@ header{
 
 .navigation a:hover::after {
     transform: scaleX(1); 
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
-    color: #2196f3 !important;
+    color: #592147 !important;
+    box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF ;
 
 }
 
@@ -189,8 +189,8 @@ header{
 
 .Button1:hover{
     background: #fff;
-    color: #255784;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
+    color: #592147 !important;
+    box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF ;
 }
 
 .Button2{
@@ -213,6 +213,6 @@ header{
 
 .Button2:hover{
     background: #fff;
-    color: #255784;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
+    color: #592147 !important;
+    box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF ;
 }
