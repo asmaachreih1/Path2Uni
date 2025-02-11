@@ -76,24 +76,6 @@ header{
 
 }
 
-.navigation .navSignup{
-    width: 100px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid floralwhite;
-    outline: none;
-    border-radius: 10px;
-    cursor:pointer;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.4s;
-    margin: 0 auto;
-    margin-top: 20px;
-    transition: .3s;
-}
-
 .navigation .btnSignUp-popup{
     display: inline-block;
     padding: 10px 20px;
@@ -117,9 +99,7 @@ header{
     font-weight: 500;
     margin-left: 40px;
     transition: 0.4s;*/
-
 }
-
 .navigation .btnSignUp-popup:hover{
     background: #fff;
     color: #255784;
