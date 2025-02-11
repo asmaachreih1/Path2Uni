@@ -126,7 +126,7 @@ header{
     
 }
 
-.Signup-btn{
+/*.Signup-btn{
     display: inline-block;
     padding: 5px 10px;
     background: transparent; 
@@ -168,7 +168,7 @@ header{
     color: #255784;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
 }
-
+*/
 .Button1{
     width: 100px;
     height: 40px;
