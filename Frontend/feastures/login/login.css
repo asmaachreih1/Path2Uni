@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../../BgdPurple.jpg') no-repeat;
+    background: url('../../assets/gradient-background.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -61,7 +61,6 @@ form {
     width: 100%;
 }
 
-
 form h1 {
     color: #fff;
     font-size: 2em;
@@ -79,9 +78,10 @@ form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #fff;
+    border: 2px solid #645bb3;
     border-radius: 5px;
     background: transparent;
+    background-color: #645bb3;
     color: #fff;
     outline: none;
 }
@@ -105,7 +105,8 @@ form button {
 form button:hover {
     background: #fff;
     color: #592147;
-    box-shadow: 0 0 10px #B026FF, 0 0 40px #B026FF, 0 0 80px #B026FF;
+    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
+    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
 }
 
 .toggle {
@@ -118,7 +119,7 @@ form button:hover {
 }
 
 .toggle a {
-    color: #B026FF;
+    color: #4b4296;
     text-decoration: none;
     font-weight: 500;
 }
