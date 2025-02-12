@@ -18,6 +18,24 @@ body {
     background-position: center;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 99;
+}
+
+.logo {
+    height: 50px; 
+    width: auto; 
+    user-select: none; 
+}
+
 .container {
     display: flex;
     flex-direction: column;
