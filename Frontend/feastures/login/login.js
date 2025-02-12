@@ -4,9 +4,9 @@ function validateForm() {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@gmail\.com$/;
     if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+        alert('Please enter a valid Gmail address (e.g., example@gmail.com).');
         return false; 
     }
 
