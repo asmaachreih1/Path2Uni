@@ -21,10 +21,13 @@ header{
     left: 0;
     width: 100%;
     padding: 10px 30px;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items:center;
     z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
