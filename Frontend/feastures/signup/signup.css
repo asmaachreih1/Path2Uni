@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../assets/gradient-background.png') no-repeat center center/cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form h1 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+form span {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #645bb3;
+    border-radius: 5px;
+    background: transparent;
+    background-color: #645bb3;
+    color: #fff;
+    outline: none;
+}
+
+form input::placeholder {
+    color: #ccc;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #fff;
+    color: #4b4296;
+    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296;
+}
+
+.toggle {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.toggle p {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+.toggle a {
+    color: #4b4296;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toggle a:hover {
+    text-decoration: underline;
+}
