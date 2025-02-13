@@ -42,3 +42,8 @@ body {
     text-transform: capitalize;
     margin-bottom: 20px;
 }
+
+.about-text p{
+    color: white;
+    font-family: 'Raleway';
+}
