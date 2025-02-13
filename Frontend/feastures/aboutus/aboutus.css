@@ -42,8 +42,14 @@ body {
     text-transform: capitalize;
     margin-bottom: 20px;
 }
-
+.about-text h5{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
 .about-text p{
     color: white;
     font-family: 'Raleway';
+    border: white;
 }
