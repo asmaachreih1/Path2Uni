@@ -71,11 +71,11 @@ button{
     color: #fff;
     font-weight: 500;
     margin-right: 10px;
-    margin-left: 150px;
+    margin-left: 200px;
     transition: 0.4s;
-    /*margin: 0 auto;*/
     margin-top: 20px;
     transition: .3s;
+    text-decoration: none;
 }
 
 button:hover {
