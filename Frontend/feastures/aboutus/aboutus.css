@@ -17,3 +17,28 @@ body {
     min-height: 100vh;
     background: url('../../assets/gradient-background.png') no-repeat center center/cover;
 }
+
+.about{
+    width: 100%;
+    padding: 78px 0px;    
+}
+
+.about-text{
+    width: 550px;
+}
+
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text h1{
+    color: white;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
