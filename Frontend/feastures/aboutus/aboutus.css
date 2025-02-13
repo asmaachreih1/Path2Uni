@@ -23,6 +23,10 @@ body {
     padding: 78px 0px;    
 }
 
+.about img{
+    height: auto;
+    width: 420px;
+}
 .about-text{
     width: 550px;
 }
