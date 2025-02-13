@@ -41,7 +41,7 @@ header{
     user-select: none; 
 }
 
-homeButton{
+.homeButton{
     width: 100px;
     height: 40px;
     background: transparent;
@@ -60,7 +60,7 @@ homeButton{
     text-decoration: none !important;
 }
 
-homeButton:hover {
+.homeButton{
     background: #fff;
     color: #592147 !important;
     /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
