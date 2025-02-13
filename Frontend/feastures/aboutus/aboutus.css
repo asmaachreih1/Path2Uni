@@ -44,13 +44,13 @@ body {
     color: white;
     font-size: 60px;
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom:10px;
     letter-spacing: 2px;
 }
 .about-text h5{
     color: white;
     font-size: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 .about-text p{
     color: white;
