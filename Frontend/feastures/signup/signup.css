@@ -60,7 +60,7 @@ header{
     text-decoration: none !important;
 }
 
-.homeButton{
+.homeButton:hover{
     background: #fff;
     color: #592147 !important;
     /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
