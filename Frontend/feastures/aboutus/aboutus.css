@@ -63,9 +63,16 @@ button{
     padding: 10px;
     background: transparent;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+button:hover {
+    background: #fff;
+    color: #592147;
+    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
+    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
 }
