@@ -85,7 +85,7 @@ button{
 
 button:hover {
     background: #fff;
-    color: #592147;
+    color: #592147 !important;
     /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
     box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
 }
