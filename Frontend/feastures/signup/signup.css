@@ -15,6 +15,23 @@ body {
     min-height: 100vh;
     background: url('../../assets/gradient-background.png') no-repeat center center/cover;
 }
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 99;
+}
+
+.logo {
+    height: 50px; 
+    width: auto; 
+    user-select: none; 
+}
 
 .container {
     display: flex;
