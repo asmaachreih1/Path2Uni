@@ -52,6 +52,31 @@ header{
     user-select: none; 
 }
 
+
+.homeButton{
+    display: inline-block;
+    padding: 7px 18px;
+    background: transparent; 
+    color: white;
+    text-decoration: none; 
+    font-size: 16px;
+    border-radius: 10px; 
+    border: 2px solid floralwhite;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.homeButton:hover{
+    background: #fff;
+    color: #592147 !important;
+    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
+    /*box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296;*/ /* sublte glow */
+
+    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
+    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /*new, sublte glow */
+    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
+}
+
 .container {
     display: flex;
     flex-direction: column;
