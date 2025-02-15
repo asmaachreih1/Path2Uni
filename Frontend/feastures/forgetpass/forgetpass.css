@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: url('../../assets/gradient-background.png') no-repeat;/*Applies a light gray background color to the page.*/
+    display: flex;/*Enables the flexbox layout, which helps in centering elements.*/
+    justify-content: center;/*Centers the content horizontally.*/
+    align-items: center;/*Centers the content vertically.*/
+    height: 100vh;/*Sets the height of the body to 100% of the viewport height (full screen)*/
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);/*Sets the background color of the container to white.*/
+    padding: 20px;/* Adds 20px of space inside the container (between the border and content).*/
+    border-radius: 10px;/*Rounds the corners of the container with a 10px radius.*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/* Adds a subtle shadow effect around the container (soft gray).*/
+    text-align: center;/*Aligns text to the center.*/
+    width: 300px;/*Sets the width of the container to 300 pixels.*/
+    font-weight: bold ;/*omar*/
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    
+}
+
+h2 {
+    margin-bottom: 15px;/*Adds 10px space below the <h2> heading to separate it from the next element.
+    */
+}
+
+input {
+    width: 100%;/*Makes the input field expand to full width of the container.*/
+    padding: 10px;/*Adds 10px of space inside the input field.*/
+    margin: 15px 0;/*Adds 10px space above and below each input field.*/
+    border: 2px solid #645bb3;/*Creates a light gray border around the input.*/
+    border-radius: 5px;/*Rounds the corners of the input field by 5px.*/
+    font-weight: normal ;/*omar*/
+    color: white;
+    background: transparent;
+    background-color: #645bb3;
+}
+input::placeholder {
+    color: #ccc;
+}
+input:focus {
+    outline: none;
+    border: 2px solid #645bb3; /* Optional: Keeps the same border color */
+}
+
+button {
+    width: 100%;/*Makes the button expand to full width of the container.
+    */
+    padding: 10px;/*Adds 10px padding inside the button.*/
+    background:transparent;/*Sets the button's background color to blue*/
+    color: white;/*The text color of the button is set to green, which might not be visually appealing on a blue button.*/
+    border: 2px solid #fff;/*Removes any default borders*/
+    border-radius: 5px;/*Rounds the button's corners by 5px*/
+    cursor: pointer;/*Changes the cursor to a pointer hand when hovering over the button*/
+    transition: 0.3s;
+    font-weight: normal ;/*omar*/
+}
+
+button:hover {
+    color:#592147;
+    background: #fff;/*When the user hovers over the button, it changes to a darker blue for a visual effect.
+    */
+    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
+
+}
+
+#message {
+    color: green;/* Sets the text color to green (this might be used for success messages)*/
+    margin-top: 15px;/*Adds 10px space above the message to separate it from other elements*/
+}
+
+a {
+    display: block;/*Makes the <a> link a block element, so it appears on a new line.*/
+    margin-top: 15px;/*Adds 15px space above the link.*/
+    color: white;/*Sets the link color to blue*/
+    text-decoration: none;/* Removes the default underline from links.*/
+    font-weight: normal ;/*omar*/
+}
+
+a:hover {
+    text-decoration: underline;/*When the user hovers over the link, it gets underlined, making it more interactive.*/
+    font-weight: bold ;/*omar*/
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 99;
+}
+.logo {
+    height: 50px; 
+    width: auto; 
+    user-select: none; 
+}
