@@ -1,0 +1,151 @@
+[33m2077efd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Force commit
+[33mb86cc59[m Updated User.js with password hashing
+[33m0e5bdaa[m Initial commit
+[33m694e4f3[m landing page
+[33m19cfe23[m welcome page, signup & signin botton, different implementation for more stable positioning
+[33m71144f9[m login form position adjustment
+[33m97976d2[m login form position adjustment
+[33m3e6d9d2[m home button style adjustment
+[33m3ce88c8[m home button from signup page
+[33m3a6494e[m style signin page header (color)
+[33mfc1d754[m adjust home button glow
+[33m58d4158[m adjust home button glow
+[33mffe660b[m adjust home button glow
+[33m01763ff[m adjust signin button glow
+[33mc785df4[m Update ourmission.html
+[33m92efd2b[m forgotpass
+[33m7dcb8cd[m Editing html page titles
+[33ma9683c0[m Contact us button
+[33m0308db2[m Strong style
+[33m334ce8f[m Em style
+[33m85cb61d[m Changing Icon
+[33m4ee71bd[m Style edit
+[33m7c287ca[m Services page html and css
+[33me5507ef[m Our mission html and css
+[33m2ccd0f9[m button
+[33m1c16001[m Margin fixup
+[33mabada8a[m Home Button
+[33mb7d6ea9[m Home Button
+[33mea7e820[m Update
+[33m5bd63fe[m button color
+[33mc791491[m Fixing Anchor
+[33m76cdf00[m Home button
+[33m90f004d[m Edit
+[33m2f02a04[m button css design
+[33md05441c[m Adding button to header signup page
+[33m20a3f89[m Adding header
+[33m2f131bf[m Hover background
+[33m78cffa0[m anchor fixup
+[33m2f391d9[m Button fixup
+[33m51b7ac8[m Button
+[33m0432a6c[m Button
+[33mb9feb42[m Button
+[33m319acec[m Button Design
+[33m5b475de[m Linking Home button
+[33ma6f519a[m button padding
+[33m6b6d685[m Button Fixup
+[33mfd8fe59[m Paragraph margin bottom
+[33mfe2d746[m button
+[33mdb45b10[m Button
+[33m70faeef[m Logo change
+[33mc4bdf56[m Change image position
+[33m10dc420[m Margin botton adjustment
+[33m13c462f[m Image design
+[33mc4e7002[m Adding picture
+[33m270834e[m Letter spacing
+[33m654ede6[m About Us css
+[33mb8a1a4b[m Text Design
+[33m78eb95d[m About us paragraph
+[33m9b06423[m About Us font size
+[33m62f2007[m About Us css design
+[33m7fbbd19[m About Us html page
+[33mbad3781[m Linking contact button to html
+[33ma39698c[m Updated html and css files
+[33m354c9d6[m contact.html & contact.css
+[33m6e0bf96[m Create contact.txt
+[33me54c179[m Linking Buttons
+[33mb942ad1[m Our mission and Services Pages
+[33m760459f[m Create services.txt
+[33m89a0888[m Create ourmission.txt
+[33m9ac4644[m About Us page background
+[33me68f5fd[m Linking css to html
+[33m3766c7c[m About Us page background
+[33m18b7bfc[m About Us page
+[33m2654ce5[m Linking AboutUs button to html page
+[33me4b8c6b[m Adding aboutus.html
+[33m4a7b178[m Create file.txt
+[33m7f12724[m Deleting About us file
+[33m599b6c1[m Create AboutUs
+[33m0ba2fd5[m Adjusting Font
+[33m7a4c608[m Toggle color
+[33m5c186f6[m toggle color
+[33m73b0353[m Toggle color
+[33m2877308[m Toggle color
+[33m4de942e[m chnage position
+[33mf5b5613[m Change position
+[33m95137d7[m border radius change
+[33mc904bcb[m Adjusting width
+[33mece7ffe[m Container Width Fixup
+[33mcbe8b7d[m container shiftdown by 50px
+[33m6fb6e28[m container shift down by 30 px
+[33m024da66[m Container shift down by 20px
+[33m57fe51b[m Shift down container by 10px
+[33m0cb74e8[m Header Design
+[33mfc6e06c[m Header Design fixup
+[33m61a3318[m Adding header
+[33m163f707[m Background Fixup
+[33mc5c48fb[m Fixing Background
+[33m7c1cce2[m linking css code t html code
+[33me08cf70[m signup css code
+[33m0739d5d[m homepage style: logo, text & image layout, colors (background, header, buttons)
+[33m2f0c742[m shorter placeholder for gmail on login page
+[33mdf94395[m front end validation allowing only gmail addresses (...@gmail.com)
+[33me977015[m frontend validation of email and password formats for login page
+[33m8dc83ba[m light colors (login form, background, button)
+[33m54af945[m adding logo to login page
+[33m48bbde5[m style for login form
+[33m19a0803[m login background
+[33ma2e066d[m connecting login.html to login.css to for styling
+[33m41a7d0f[m fixing connection to resetpass page
+[33m9dc5f19[m Button Design
+[33m585ee3b[m Button Design
+[33mff2ea4e[m Button Design
+[33mffe91c6[m Font Size
+[33ma176b39[m Sign Up Button
+[33m518f57d[m Sign Up Button
+[33mcfb7545[m Sign Up/In Link
+[33mbf555f0[m Sign up link
+[33m61f70ad[m SIgn up link
+[33mbe75133[m Sign Up Link
+[33me55dffb[m Sign Up Link
+[33m83161e5[m Html Link Button
+[33m8d16ab1[m Test
+[33me29d674[m Sign Up Link
+[33m4bcf0c5[m Sign up button
+[33mb61a46a[m Button
+[33m2213f28[m Button
+[33me79f011[m Code fix
+[33m10e088d[m Buttons Colors
+[33m8786d99[m Sign Up
+[33m4ef194c[m Sign Up
+[33me8323b3[m Sign Up
+[33mf38e344[m Sign Up
+[33m89ed4af[m Sign Up
+[33me5d903a[m Sign Up
+[33mb3d1a2f[m Sign Up
+[33m92ce31e[m Sign Up button
+[33mdaff6e9[m Button FixUp
+[33mf03afa2[m Button FixUp
+[33mca72cca[m Button Fixup
+[33m110f276[m Buttons fixup
+[33m65a7ec0[m Background
+[33mc9773f1[m Adding Background Image
+[33me980ade[m Remove Background
+[33m73114c7[m BackGround Image
+[33m820d09d[m Sign Up html File
+[33mc1a9e96[m Home Page css File
+[33m86a8cfa[m forget pass html
+[33m653b8aa[m Home Page html file
+[33m059465b[m html file for the login page
+[33m1d46b06[m Initial commit with backend setup and MongoDB connection
+[33m2c2c764[m Initial commit
