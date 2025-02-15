@@ -7,7 +7,9 @@ exports.authMiddleware = (req, res, next) => {
   if (!token) {
     return res.status(401).json({ message: 'No token, authorization denied' });
   }
-
+//check if the token is valid
+//if valid it extracts the user’s ID and attaches it to the req.user
+//if invalid it returns error 401
   try {
     const decoded = jwt.verify(token, 'your_jwt_secret');
     req.user = decoded;
