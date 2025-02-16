@@ -8,4 +8,5 @@ router.post("/signin", signIn);
 router.post("/forgot-password", forgotPassword);
 router.post("/reset-password/:token", resetPassword);
 
-module.exports = router;
+router.post("sign in", signIn);
+//module.exports = router;
