@@ -19,6 +19,11 @@ exports.forgotPassword = async (req, res) => {
         const resetLink = `http://yourfrontend.com/reset-password/${resetToken}`;
         await sendEmail(email, "Password Reset", `Click here to reset your password: ${resetLink}`);
 
+        res.json({ message: "Reset link sent to email" });
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+};
 
 //leen
 const jwt= require("jsonwentoken");//generate authentication tokens
