@@ -11,7 +11,9 @@ body {
     display: flex;/*Enables the flexbox layout, which helps in centering elements.*/
     justify-content: center;/*Centers the content horizontally.*/
     align-items: center;/*Centers the content vertically.*/
-    height: 100vh;/*Sets the height of the body to 100% of the viewport height (full screen)*/
+    min-height: 100vh;/*Sets the height of the body to 100% of the viewport height (full screen)*/
+    background-position: center;
+    background-size: center;
 }
 
 .container {
@@ -27,6 +29,7 @@ body {
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(10px);
+    margin-top: 50px;
     
 }
 
@@ -97,6 +100,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
+    color: white;
     padding: 10px 30px;
     display: flex;
     justify-content: space-between;
