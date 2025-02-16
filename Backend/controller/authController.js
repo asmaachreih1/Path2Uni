@@ -24,6 +24,15 @@ exports.forgotPassword = async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 };
+exports.resetPassword = async (req, res) => {
+    try {
+        const { token } = req.params;
+        const { newPassword } = req.body;
+
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpires: { $gt: Date.now() }
+        });
 
 //leen
 const jwt= require("jsonwentoken");//generate authentication tokens
