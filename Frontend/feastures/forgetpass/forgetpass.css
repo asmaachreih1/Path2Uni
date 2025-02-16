@@ -11,9 +11,10 @@ body {
     display: flex;/*Enables the flexbox layout, which helps in centering elements.*/
     justify-content: center;/*Centers the content horizontally.*/
     align-items: center;/*Centers the content vertically.*/
-    min-height: 100vh;/*Sets the height of the body to 100% of the viewport height (full screen)*/
-    background-position: center;
-    background-size: center;
+    height: 100vh;/*Sets the height of the body to 100% of the viewport height (full screen)*/
+    z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -34,7 +35,7 @@ body {
 }
 
 h2 {
-    margin-bottom: 15px;/*Adds 10px space below the <h2> heading to separate it from the next element.
+    margin-bottom: 10px;/*Adds 10px space below the <h2> heading to separate it from the next element.
     */
 }
 
@@ -136,4 +137,5 @@ header{
     /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
     box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /*new, sublte glow */
     /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
+    text-decoration: none;
 }
