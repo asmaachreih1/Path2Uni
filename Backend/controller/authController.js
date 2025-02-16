@@ -4,6 +4,11 @@ const crypto = require('crypto');
 const { sendEmail } = require('../utils/emailService');
 const bcrypt = require('bcrypt');
 
+exports.forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ email });
+
 
 //leen
 const jwt= require("jsonwentoken");//generate authentication tokens
