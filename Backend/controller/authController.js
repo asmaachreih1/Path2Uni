@@ -16,6 +16,9 @@ exports.forgotPassword = async (req, res) => {
         user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
         await user.save();
 
+        const resetLink = `http://yourfrontend.com/reset-password/${resetToken}`;
+        await sendEmail(email, "Password Reset", `Click here to reset your password: ${resetLink}`);
+
 
 //leen
 const jwt= require("jsonwentoken");//generate authentication tokens
