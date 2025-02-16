@@ -3,6 +3,7 @@ const User = require('../models/user');
 const crypto = require('crypto');
 const { sendEmail } = require('../utils/emailService');
 const bcrypt = require('bcrypt');
+const jwt= require("jsonwebtoken");//generate authentication tokens
 
 exports.forgotPassword = async (req, res) => {
     try {
@@ -46,7 +47,7 @@ exports.resetPassword = async (req, res) => {
     }
 };
 //leen
-const jwt= require("jsonwentoken");//generate authentication tokens
+
 
 //sign in handler
 //searches for the user in the database using email
@@ -55,6 +56,10 @@ const jwt= require("jsonwentoken");//generate authentication tokens
 exports.signIn = async (req, res) => { 
     try {
         const { email, password } = req.body;
+         //check if email and pass is provided
+        if (!email || !password) {
+            return res.status(400).json({ message: "Email and password are required" });
+        }
 
         //check if user exists
         const user = await User.findOne({ email });
@@ -70,11 +75,23 @@ exports.signIn = async (req, res) => {
 
         //creates a JWT token using the user's ID
         //returns the token in the response for the frontend to use
-        const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign(
+            { userId: user._id },
+            process.env.JWT_SECRET || "fallback_secret",
+            { expiresIn: "1h" }
+        );
+          //exclude pass before sending user data
+          const userData = {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+        };
 
-        res.json({ token, message: "Sign in successful" });
+        //send response
+        res.json({ token, user: userData, message: "Sign in successful" });
     } catch (error) {
-        res.status(500).json({ message: "Server error" });
+        console.error("Sign-in Error:", error); //log error for debugging
+        res.status(500).json({ message: "Server error" })
     }
 };
 
