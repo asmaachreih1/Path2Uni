@@ -56,20 +56,27 @@ exports.resetPassword = async (req, res) => {
 exports.signIn = async (req, res) => { 
     try {
         const { email, password } = req.body;
+        console.log("Received Sign-in Request:");
+        console.log("Email:", email);
+        console.log("Password:", password);
          //check if email and pass is provided
         if (!email || !password) {
+            console.log("Missing Email or Password");
             return res.status(400).json({ message: "Email and password are required" });
         }
 
         //check if user exists
         const user = await User.findOne({ email });
         if (!user) {
+            console.log("User not found in database");
             return res.status(400).json({ message: "Invalid email or password" });
         }
+        console.log("Stored Password Hash:", user.password);
 
         //validate password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
+            console.log("Password Match:", isMatch);
             return res.status(400).json({ message: "Invalid email or password" });
         }
 
@@ -88,6 +95,7 @@ exports.signIn = async (req, res) => {
         };
 
         //send response
+        console.log("Sign-in Successful!");
         res.json({ token, user: userData, message: "Sign in successful" });
     } catch (error) {
         console.error("Sign-in Error:", error); //log error for debugging
