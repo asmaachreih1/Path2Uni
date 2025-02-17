@@ -1,46 +1,22 @@
 const loginForm = document.getElementById('loginForm');
 
 function validateForm() {
-
-    /*
-     NO NEED for email format validation, because of using "email" type in html file
-     (so it's optional here in js)
-
     const email = document.getElementById('email').value.trim();
-    
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    
+    const password = document.getElementById('password').value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Accepts any email format
+
     if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address (e.g., example@gmail.com).');
+        alert('Please enter a valid Gmail address (e.g., example@gmail.com).');
         return false; 
     }
-    */
 
-    /*
-    PASSWORD FORMAT: at least 8 characters, that include
-    at least one letter (uppercase or lowercase),
-    at least one special character
-    */
-    const password = document.getElementById('password').value.trim();
-
-    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*\.\+\-])[a-zA-Z0-9!@#$%^&*\.\+\-]{8,}$/;
-
-    if (!passwordRegex.test(password)) {
-        alert('Password must be at least 8 characters long, contain at least one letter, and one special character (including .).');
-        return false;
-    }
-    
-    /*
-    password format: only restriction 8 characters min:
-    const password = document.getElementById('password').value.trim();
     if (password.length < 8) {
         alert('Password must be at least 8 characters long.');
         return false;
     }
-    */
 
     return true;
-
 }
 
 loginForm.addEventListener('submit', async function (event) {
@@ -52,16 +28,18 @@ loginForm.addEventListener('submit', async function (event) {
 
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
+    console.log("Attempting to log in with:", email, password); // Debugging lleen
 
     try {
         // Make a POST request to your backend for authentication
-        const response = await fetch('http://localhost:5001/login', {
+        const response = await fetch('http://localhost:5001/api/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email, password }),
         });
+        console.log("🛠 Response received:", response); // Debugging leen
 
         if (response.ok) {
             // If login is successful, redirect to the landing page
