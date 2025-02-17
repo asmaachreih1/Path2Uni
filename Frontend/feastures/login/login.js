@@ -30,7 +30,7 @@ loginForm.addEventListener('submit', async function (event) {
 
     try {
         // Make a POST request to your backend for authentication
-        const response = await fetch('http://your-backend-api/login', {
+        const response = await fetch('http://localhost:5001/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
