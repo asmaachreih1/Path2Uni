@@ -94,7 +94,7 @@ button:hover {
     color:#592147;
     background: #fff;/*When the user hovers over the button, it changes to a darker blue for a visual effect.
     */
-    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
+    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /* sublte glow */
 
 }
 
