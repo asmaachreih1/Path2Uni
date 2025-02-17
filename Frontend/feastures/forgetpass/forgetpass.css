@@ -109,7 +109,7 @@ header{
     user-select: none; 
 }
 .homeButton{
-    display: flex;
+    display: inline-block;
     padding: 7px 18px;
     background: transparent; 
     color: white;
