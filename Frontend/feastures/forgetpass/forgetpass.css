@@ -86,6 +86,8 @@ button {
     cursor: pointer;/*Changes the cursor to a pointer hand when hovering over the button*/
     transition: 0.3s;
     font-weight: normal ;/*omar*/
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 button:hover {
