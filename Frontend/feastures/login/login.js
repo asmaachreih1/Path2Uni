@@ -3,16 +3,33 @@ const loginForm = document.getElementById('loginForm');
 function validateForm() {
 
     /*
+     NO NEED for email format validation, because of using "email" type in html file
+     (so it's optional here in js)
+
+    const email = document.getElementById('email').value.trim();
+    
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address (e.g., example@gmail.com).');
+        return false; 
+    }
+    */
+
+    /*
     PASSWORD FORMAT: at least 8 characters, that include
     at least one letter (uppercase or lowercase),
     at least one special character
     */
-    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*\.])[a-zA-Z0-9!@#$%^&*\.]{8,}$/;
+    const password = document.getElementById('password').value.trim();
+
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*\.\+\-])[a-zA-Z0-9!@#$%^&*\.\+\-]{8,}$/;
+
     if (!passwordRegex.test(password)) {
         alert('Password must be at least 8 characters long, contain at least one letter, and one special character (including .).');
         return false;
     }
-
+    
     /*
     password format: only restriction 8 characters min:
     const password = document.getElementById('password').value.trim();
@@ -21,21 +38,9 @@ function validateForm() {
         return false;
     }
     */
-   
+
     return true;
 
-    /*
-     NO NEED for email format validation, because using "email" type in html file
-     (so it's optional here in js)
-
-    const email = document.getElementById('email').value.trim();
-    
-    const emailRegex = /^[^\s@]+@gmail\.com$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid Gmail address (e.g., example@gmail.com).');
-        return false; 
-    }
-    */
 }
 
 loginForm.addEventListener('submit', async function (event) {
