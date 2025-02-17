@@ -54,7 +54,14 @@ exports.resetPassword = async (req, res) => {
 //if the email doesn’t exist it returns error 400
 //if the email exists it compares the entered pass with the stored hashed pass
 exports.signIn = async (req, res) => { 
+    console.log("Received Sign-in Request:", req.body); // Log incoming request
     try {
+         
+        console.log("Fetching all user emails from database...");
+        const users = await User.find({}, { email: 1, _id: 0 });
+        console.log("Stored Emails in Database:", users);
+
+
         const { email, password } = req.body;
         console.log("Received Sign-in Request:");
         console.log("Email:", email);
@@ -66,9 +73,14 @@ exports.signIn = async (req, res) => {
         }
 
         //check if user exists
-        const user = await User.findOne({ email });
+        console.log("Searching for email in database:", email);
+        const user = await User.findOne({ email: { $regex: new RegExp(`^${email}$`, "i") } });
+
+
         if (!user) {
-            console.log("User not found in database");
+            console.log("User not found in database. Searching for:", email);
+            const allUsers = await User.find();
+            console.log("All Users in DB:", allUsers);
             return res.status(400).json({ message: "Invalid email or password" });
         }
         console.log("Stored Password Hash:", user.password);
