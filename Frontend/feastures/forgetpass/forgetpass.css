@@ -11,6 +11,7 @@ a {
     text-decoration: none !important;
     color: inherit !important;
 }
+
 body {
     background: url('../../assets/gradient-background.png') no-repeat;/*Applies a light gray background color to the page.*/
     display: flex;/*Enables the flexbox layout, which helps in centering elements.*/
@@ -29,7 +30,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/* Adds a subtle shadow effect around the container (soft gray).*/
     text-align: center;/*Aligns text to the center.*/
     width: 300px;/*Sets the width of the container to 300 pixels.*/
-    font-weight: bold ;/*omar*/
+    /*font-weight: bold*/ ;/*omar*/
     color:white;
     display: flex;
     flex-direction: column;
@@ -42,6 +43,17 @@ body {
 h2 {
     margin-bottom: 10px;/*Adds 10px space below the <h2> heading to separate it from the next element.
     */
+    color: #fff;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 input {

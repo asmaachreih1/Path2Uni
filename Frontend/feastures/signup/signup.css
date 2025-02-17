@@ -99,7 +99,7 @@ form span {
     color: #fff;
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
 }
 
 form input {
