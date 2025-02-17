@@ -119,6 +119,7 @@ header{
     border: 2px solid floralwhite;
     cursor: pointer;
     transition: 0.4s;
+    max-width: fit-content;
 }
 .homeButton:hover{
     background: #fff;
