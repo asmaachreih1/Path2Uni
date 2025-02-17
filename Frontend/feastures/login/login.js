@@ -13,6 +13,15 @@ function validateForm() {
         return false;
     }
 
+    /*
+    password format: only restriction 8 characters min:
+    const password = document.getElementById('password').value.trim();
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        return false;
+    }
+    */
+   
     return true;
 
     /*
