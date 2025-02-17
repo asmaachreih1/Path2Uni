@@ -77,6 +77,7 @@ exports.signIn = async (req, res) => {
         const user = await User.findOne({ email: { $regex: new RegExp(`^${email}$`, "i") } });
 
 
+
         if (!user) {
             console.log("User not found in database. Searching for:", email);
             const allUsers = await User.find();
