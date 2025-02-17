@@ -58,7 +58,7 @@ header{
     background: #fff;
     color: #592147 !important;
     /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /* more clear glow */
-    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
+    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /* sublte glow */
 }
 
 .container {
@@ -99,7 +99,7 @@ form span {
     color: #fff;
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
 }
 
 form input {
@@ -133,7 +133,7 @@ form button {
 form button:hover {
     background: #fff;
     color: #4b4296;
-    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296;
+    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e;
 }
 
 .toggle {
