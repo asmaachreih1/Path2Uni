@@ -32,7 +32,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/* Adds a subtle shadow effect around the container (soft gray).*/
     text-align: center;/*Aligns text to the center.*/
     width: 300px;/*Sets the width of the container to 300 pixels.*/
-    font-weight: bold ;/*omar*/
+    /*font-weight: bold*/ ;/*omar*/
     color:white;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,17 @@ body {
 h2 {
     margin-bottom: 10px;/*Adds 10px space below the <h2> heading to separate it from the next element.
     */
+    color: #fff;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .container p{
@@ -81,13 +92,15 @@ button {
     cursor: pointer;/*Changes the cursor to a pointer hand when hovering over the button*/
     transition: 0.3s;
     font-weight: normal ;/*omar*/
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 button:hover {
     color:#592147;
     background: #fff;/*When the user hovers over the button, it changes to a darker blue for a visual effect.
     */
-    box-shadow: 0 0 10px #4b4296, 0 0 40px #4b4296, 0 0 80px #4b4296; /* sublte glow */
+    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /* sublte glow */
 
 }
 

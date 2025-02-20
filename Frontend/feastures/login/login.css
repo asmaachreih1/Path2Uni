@@ -95,6 +95,7 @@ form h1 {
 
 form span {
     color: #fff;
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -145,11 +146,15 @@ form button:hover {
 }
 
 .toggle a {
-    color: #4b4296;
+    /*color: #4b4296;*/
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
+/*
 .toggle a:hover {
     text-decoration: underline;
+    font-weight: bold ;
 }
+*/

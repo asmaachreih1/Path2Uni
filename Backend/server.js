@@ -5,7 +5,12 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5001;//l
 
+
 const authRoutes = require('./routes/authRoutes');//l
+
+const cors =require('cors');//l
+app.use(cors());//l
+
 // Middleware to parse JSON
 app.use(express.json());//l
 app.use('/api', authRoutes);//l
