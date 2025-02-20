@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
 
 * {
     margin: 0;
@@ -11,6 +13,7 @@ a {
     text-decoration: none !important;
     color: inherit !important;
 }
+
 body {
     background: url('../../assets/gradient-background.png') no-repeat;/*Applies a light gray background color to the page.*/
     display: flex;/*Enables the flexbox layout, which helps in centering elements.*/
@@ -42,6 +45,10 @@ body {
 h2 {
     margin-bottom: 10px;/*Adds 10px space below the <h2> heading to separate it from the next element.
     */
+}
+
+.container p{
+    font-family: 'Raleway';
 }
 
 input {
