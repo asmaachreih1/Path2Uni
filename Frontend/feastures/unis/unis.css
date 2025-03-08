@@ -1,0 +1,93 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #1E3A8A, #FFA500, #FFFFFF);
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Title & Subtitle */
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* University Card Grid */
+.university-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/* University Card */
+.university-card {
+    background: rgb(255, 255, 255);
+    color: #004080;
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.university-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.university-card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.university-card .location {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFA500;
+    margin-bottom: 10px;
+}
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #004080;
+    font-size: 18px;
+    margin: 0 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #FFA500;
+}
+
+/* Hover Effect */
+.university-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
