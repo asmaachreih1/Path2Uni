@@ -3,48 +3,186 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv= "X-UA-Compatible" content = "IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Path2Uni</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    
     <header>
-        <img src="assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
-        <nav class = "navigation">
-            <a href="feastures/aboutus/aboutus.html">About Us <span></span></a>
-            <a href="feastures/ourmission/ourmission.html">Our mission <span></span></a>
-            <a href="feastures/services/services.html">Services <span></span></a>
-            <a href="feastures/contact/contact.html">Contact Us<span></span></a>
-            <a href="feastures/signup/signup.html" class="btnSignUp-popup">Sign Up</a>
+        <img src="transparent-logo.png" alt="Path2Uni Logo" class="logo">
+        <nav class="navigation">
+            <a href="#" onclick="scrollToSection('Home'); return false;">Home</a>
+            <a href="#" onclick="scrollToSection('Aboutus'); return false;">About Us</a>
+            <a href="#" onclick="scrollToSection('mission'); return false;">Our Mission</a>
+            <a href="#" onclick="scrollToSection('services'); return false;">Services</a>
+            <a href="#" onclick="scrollToSection('contact'); return false;">Contact Us</a>
+            <a href="signup.html" class="btnSignUp-popup">Sign Up</a>
         </nav>
     </header>
 
-    <div class="content-wrapper">
-        <div class="left-section">
-            <h1 class="Welcome">Welcome to Path2Uni!</h1> 
-    <p class="sub-welc">Your Journey Starts Here</p>
+    <section id="Home">
+        <div class="content-wrapper">
+            <div class="left-section">
+                <h1 class="Welcome">The Revolutionary Website Guiding Highschool Students To Their Dream Universities</h1> 
+                <p class="sub-welc">Your Journey Starts Here!</p>
+                <div class="buttons">
+                    <a href="signup.html"><button>Sign Up</button></a>
+                    <a href="signin.html"><button>Sign In</button></a>
+                </div>
+            </div>
+            <div class="right-section">
+                <img src="assets/university-image.png" alt="University Image" class="university-image">
+            </div>
+        </div>
+    </section>
     
-    <div class="buttons">
-        <a href="feastures/signup/signup.html"><button>Sign Up</button></a>
-        <a href="feastures/login/login.html"><button>Sign In</button></a>
-    </div>
 
-    <!-- old button structure: (changed for spacing)-->
-    <!-- <div class="container">
-        <button class="Button1"><a href="feastures/signup/signup.html">Sign Up</a></button>
-        <button class="Button2"><a href="feastures/login/login.html">Sign In</a></button>
-    </div> -->
+    <section id="Aboutus">
+        <div class="main">
+            <div class="about-text">
+                <h3>About Us</h3>
+                <h1>#1 Resource for Navigating the University Journey!</h1>
+                <p>We are a team of five dedicated individuals, working on the Path2Uni project for our CMPS 271 course. Our goal is to provide valuable resources, expert advice, and personalized guidance to help students navigate the university application process and achieve success in their higher education journey.</p>
+            </div>
 
+    </section>
 
+    <section id="mission">
+        <div class="main">
+            <div class="mission-text">
+                <h3>Our Mission</h3>
+                <h1>Empowering Students, Unlocking Success...</h1>
+                <p>Our mission is to empower students by simplifying the university application process and providing resources for success. We aim to create an inclusive space with guidance on applications, scholarships, and more, supporting students at every step to help them achieve their academic goals.</p>            </div>
         </div>
-        <div class="right-section">
-            <img src="assets/university-image.png" alt="University Image" class="university-image">
-        </div>
-        
-    </div>
+    </section>
 
+    <section id="services">
+        <div class="main">
+            <div class="services-text">
+                <h3>Our Services</h3>
+                <h1>Unmatched Features</h1>
+            </div>
+    
+            <div class="services-container">
+                <div class="service-box">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>University Application Guidance</h3>
+                    <p>Step-by-step support through the application process, from selecting universities to submitting applications.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-award"></i>
+                    <h3>Scholarship Advice</h3>
+                    <p>Information on available scholarships and tips on how to apply successfully.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Personalized Consultation</h3>
+                    <p>One-on-one sessions to help students choose the right courses, universities, and career paths.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Application Review</h3>
+                    <p>Professional review of application materials, including essays and personal statements, to ensure quality and effectiveness.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Student Success Resources</h3>
+                    <p>Access to articles, tools, and resources to help students succeed academically and personally throughout their university journey.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Career Counseling</h3>
+                    <p>Guidance on career paths and internship opportunities, helping students plan their future beyond university.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact">
+        <div class="main">
+            <div class="contact-text">
+                <h3>Contact Us</h3>
+                <h1>Get in Touch!</h1>
+            </div>
+
+            <div class="contact-box">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <head>
+        <!-- Add Font Awesome CDN to your head tag -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
+    
+    <section id="footer-links">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Gmail</h3>
+                <ul>
+                    <li><a href="mailto:yourname@example.com"><i class="fas fa-envelope"></i> info@path2uni.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#Aboutus">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Popular Links</h3>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Aboutus">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2025 Path2Uni. All rights reserved.</p>
+        </div>
+    </section>
+    
+    
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
