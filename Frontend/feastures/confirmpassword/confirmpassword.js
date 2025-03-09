@@ -1,50 +1,53 @@
-const confirmPassForm = document.getElementById('confirmPassForm');
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the token from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token"); 
 
-function validatePasswords() {
-    const newPassword = document.getElementById('newPassword').value.trim();
-    const confirmPassword = document.getElementById('confirmPassword').value.trim();
-
-    if (newPassword.length < 8) {
-        alert('Password must be at least 8 characters long.');
-        return false;
+    if (!token) {
+        alert("Invalid or missing token.");
+        window.location.href = "../login/login.html"; // Redirect to login if token is missing
+        return;
     }
 
-    if (newPassword !== confirmPassword) {
-        alert('Passwords do not match. Please try again.');
-        return false;
-    }
+    const confirmPassForm = document.getElementById("reset-password-form");
 
-    return true;
-}
+    confirmPassForm.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent form from reloading the page
 
-confirmPassForm.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent default form submission
+        const newPassword = document.getElementById("new-password").value.trim();
+        const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-    if (!validatePasswords()) {
-        return; // Stop if validation fails
-    }
-
-    const newPassword = document.getElementById('newPassword').value.trim();
-
-    try {
-        // Send password update request to the backend
-        const response = await fetch('http://localhost:5001/api/reset-password', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ newPassword }),
-        });
-
-        if (response.ok) {
-            alert('Password updated successfully. You can now sign in.');
-            window.location.href = '../signin/login.html';
-        } else {
-            alert('Failed to update password. Please try again.');
+        // Validate password length
+        if (newPassword.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return;
         }
-    } catch (error) {
-        console.error('Error resetting password:', error);
-        alert('An error occurred while resetting the password. Please try again later.');
-    }
-});
 
+        // Check if passwords match
+        if (newPassword !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        try {
+            // Send password update request to backend
+            const response = await fetch(`http://localhost:5001/api/reset-password/${token}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ newPassword }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Password reset successfully! You can now sign in.");
+                window.location.href = "../login/login.html"; // Redirect after reset
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (error) {
+            console.error("Reset password error:", error);
+            alert("Something went wrong. Try again.");
+        }
+    });
+});

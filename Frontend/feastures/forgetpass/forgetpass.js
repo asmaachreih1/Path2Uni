@@ -1,4 +1,4 @@
-document.getElementById("forgot-password-form").addEventListener("submit", function(event) {
+document.getElementById("forgot-password-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     let email = document.getElementById("email").value;
@@ -10,31 +10,29 @@ document.getElementById("forgot-password-form").addEventListener("submit", funct
         return;
     }
 
-    // Simulating API request (Replace with actual API call)
-    fetch("https://your-api-endpoint.com/forgot-password", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: email })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+    try {
+        const response = await fetch("http://localhost:5001/api/forgot-password", {  // Ensure backend is running
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: email })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
             messageBox.style.color = "green";
-            messageBox.textContent = "Reset link sent! Check your email.";
+            messageBox.textContent = "✅ Reset link sent! Check your email.";
         } else {
             messageBox.style.color = "red";
-            messageBox.textContent = "Error: " + data.message;
+            messageBox.textContent = "❌ " + data.message;
         }
-    })
-    .catch(error => {
+    } catch (error) {
         messageBox.style.color = "red";
-        messageBox.textContent = "Something went wrong. Please try again later.";
-    });
+        messageBox.textContent = "❌ Something went wrong. Try again.";
+    }
 });
 
-// Function to validate email format
 function validateEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
