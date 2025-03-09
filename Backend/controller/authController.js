@@ -23,7 +23,7 @@ exports.forgotPassword = async (req, res) => {
         await user.save();
 
         
-        const resetLink = `http://localhost:5500/Frontend/features/confirmpassword/confirmpassword.html?token=${resetToken}`;
+        const resetLink = `http://localhost:5500/Frontend/feastures/confirmpassword/confirmpassword.html?token=${resetToken}`;
 
 
         console.log("Generated Reset Link:", resetLink); // Debugging
