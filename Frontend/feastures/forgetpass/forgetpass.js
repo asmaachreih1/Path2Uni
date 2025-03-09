@@ -11,6 +11,7 @@ document.getElementById("forgot-password-form").addEventListener("submit", async
     }
 
     try {
+         console.log("Sending password reset request for:", email);//new
         const response = await fetch("http://localhost:5001/api/forgot-password", {  // Ensure backend is running
             method: "POST",
             headers: {
@@ -24,10 +25,12 @@ document.getElementById("forgot-password-form").addEventListener("submit", async
             messageBox.style.color = "green";
             messageBox.textContent = "✅ Reset link sent! Check your email.";
         } else {
+            console.error("❌ Server responded with:", data); // Debugging newww
             messageBox.style.color = "red";
             messageBox.textContent = "❌ " + data.message;
         }
     } catch (error) {
+        console.error("❌ Network error:", error);//newwwwww
         messageBox.style.color = "red";
         messageBox.textContent = "❌ Something went wrong. Try again.";
     }
