@@ -50,6 +50,8 @@ loginForm.addEventListener('submit', async function (event) {
         }
     } catch (error) {
         console.error('Error logging in:', error);
-        alert('An error occurred while logging in. Please try again later.');
+        const errorData = await response.json();
+        alert(`Error: ${errorData.message}`);
+        console.error("Backend Error:", errorData);
     }
 });
