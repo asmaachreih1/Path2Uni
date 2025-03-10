@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 
 *{
     margin: 0;
@@ -15,19 +18,10 @@ a {
     color: inherit !important;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('assets/gradient-background.png') no-repeat;
-    background-size: cover;
-    background-position: center;
 
-}
 
-header{
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,6 +34,7 @@ header{
     z-index: 99;
     background-color: #4b4296;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
 }
 
 .logo {
@@ -48,7 +43,7 @@ header{
     user-select: none; 
 }
 
-.navigation a{
+.navigation a {
     position:relative;
     font-size: 16px;
     color: rgb(255, 255, 255);
@@ -73,10 +68,8 @@ header{
 
 .navigation a:hover::after {
     transform: scaleX(1); 
-    color: #592147 !important; 
-    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
-    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /*new, sublte glow */
-    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
+    color: #f89648 !important;
+    box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite; 
 }
 
 .navigation .btnSignUp-popup{
@@ -93,11 +86,22 @@ header{
 }
 .navigation .btnSignUp-popup:hover{
     background: #fff;
-    color: #592147 !important;
-    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
-    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /*new, sublte glow */
-    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
+    color: #f89648 !important;
+    box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite; 
 }
+
+#Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('bg1.png');
+    /*background-color: #4b4296;*/
+    background-size: cover;
+    background-position: center;
+}
+
 
 .content-wrapper {
     display: flex;
@@ -105,8 +109,6 @@ header{
     align-items: center;
     width: 100%;
     height: 100vh;
-    /*max-width: 1200px;*/
-    /*margin-top: 50px;*/
     position: relative; /* Required for the pseudo-element to work */
     overflow: hidden; /* Ensure the fog doesn't overflow */
 }
@@ -118,49 +120,29 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-
-    /* initial gradient:
-
-    background: linear-gradient(
-    to right, 
-    rgba(75, 66, 150, 0) 0%, 
-    rgba(75, 66, 150, 0.2) 20%, 
-    rgba(75, 66, 150, 0.8) 40%, 
-    rgba(75, 66, 150, 1) 50%, 
-    rgba(75, 66, 150, 1) 60%,
-    rgba(75, 66, 150, 0.8) 70%,
-    rgba(75, 66, 150, 0.2) 80%,
-    rgba(75, 66, 150, 0) 100% 
-);
-*/
-
-    /* shifted left: */
-
-    background: linear-gradient(
-    to right, /* Horizontal gradient */
-    rgba(75, 66, 150, 0) 0%, /* Fully transparent on the left */
-    rgba(75, 66, 150, 0.2) 10%, /* Light fog on the left side (shifted left) */
-    rgba(75, 66, 150, 0.8) 30%, /* Darker fog approaching the center (shifted left) */
-    rgba(75, 66, 150, 1) 40%,  /* Darkest at the center (shifted left) */
-    rgba(75, 66, 150, 1) 50%, /* Darkest at the center (wider chunk, shifted left) */
-    rgba(75, 66, 150, 0.8) 60%, /* Darker fog moving away from the center (shifted left) */
-    rgba(75, 66, 150, 0.2) 70%, /* Light fog on the right side (shifted left) */
-    rgba(75, 66, 150, 0) 80% /* Fully transparent on the right (shifted left) */
-);
-
     z-index: 1; /* Ensure it sits above the content but below text/buttons */
     pointer-events: none; /* Allow interaction with elements below */
 }
 
 
+section {
+    height: 100vh;
+    padding: 50px;
+}
+
+
 .left-section {
-    flex: 1; 
-    max-width: 50%;
+    flex: 1.5; 
+    width: 100%;
+    max-width: 700px;
     padding-right: 20px;
+    left: 50px;
     margin-top: 50px;
     text-align: left; 
     position: relative;
     z-index: 2;
+    justify-content: center; 
+    align-items: center;
 }
 
 .right-section {
@@ -168,14 +150,7 @@ header{
     position: relative;
     height: 100vh; /* Make the section full screen */
     width: 100%;
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
     overflow: hidden;
-    /*max-width: 50%; */
-    /*padding-left: 20px; */
-    /*padding-bottom: 40px; */
-    /*text-align: right; */
     z-index: 0;
 }
 
@@ -191,24 +166,27 @@ header{
     filter: brightness(0.8); /* Slightly darkens the image for blending */
 }
 
-.Welcome{
+.Welcome {
     color: #fff;
-    font-size: 40px;
-    text-align: center;
+    font-size: 30px;
+    text-align: left;
+    width: 75%; /* Set the width to 75% */
+    max-width: 100%; /* Ensure it doesn't exceed the page width */
+    margin-left: 0; /* Adjust margin if needed */
 }
 
 .sub-welc {
     color: #fff;
     font-family: 'Raleway', sans-serif;
-    font-size: 25px; 
-    text-align: center;
-    margin-top: 5px;
+    font-size: 20px; 
+    text-align: left;
+    margin-top: 8px;
 }
 
 .content-wrapper .buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: left;
+    gap: 30px;
     margin-top: 20px;
 }
 
@@ -216,7 +194,7 @@ header{
     width: 100px;
     height: 40px;
     background: transparent;
-    border: 2px solid floralwhite;
+    border: 2px solid #fff;
     outline: none;
     border-radius: 10px;
     cursor:pointer;
@@ -227,143 +205,369 @@ header{
 
 .content-wrapper .buttons button:hover {
     background: #fff;
-    color: #592147 !important;
-    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
-    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e; /*new, sublte glow */
-    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
+    color: #f89648 !important;
+    box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite; 
 }
 
 
+#Aboutus, #mission, #services {
+    padding-top: 100px;
 
-/*
-
-.university-image::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to left,
-        rgba(75, 66, 150, 0.8) 0%,
-        rgba(75, 66, 150, 0.5) 50%,
-        rgba(75, 66, 150, 0) 100%
-    );
-    z-index: 2;
 }
 
-*/
-
-/*
-.right-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        circle at center,
-        rgba(117, 100, 204, 0.8) 0%, 
-        rgba(75, 66, 150, 0.6) 50%,
-        rgba(75, 66, 150, 0) 100% 
-    );
-    z-index: 2;
-}
-*/
-
-/*
-
-.right-section:hover::after {
-    animation: fadeFog 2s forwards;
-}
-
-@keyframes foggy {
-    0% {
-        background: linear-gradient(to left, rgba(75, 66, 150, 1) 30%, rgba(75, 66, 150, 0.6) 60%, rgba(75, 66, 150, 0) 100%);
-    }
-    100% {
-        background: linear-gradient(to left, rgba(75, 66, 150, 0.9) 30%, rgba(75, 66, 150, 0.4) 60%, rgba(75, 66, 150, 0) 100%);
-    }
-}
-
-.right-section::before {
-    animation: foggy 5s ease-in-out infinite alternate;
-}
-*/
-
-
-/*old button style: (changed for spacing) */
-
-/*
-.container {
-    display: flex;
-    gap: 0; 
+#Aboutus{
     margin-top: 20px;
+    background: url('bg2.png');
+    background-color: #fff;
+    left: 40px;
 }
-*/
 
-/*
-.Button1{
-    width: 100px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid floralwhite;
-    outline: none;
-    border-radius: 10px;
-    cursor:pointer;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 500;
-    margin-right: 10px;
-    margin-left: 150px;
-    transition: 0.4s;
-    */
-    /*margin: 0 auto;*/
-    /*margin-top: 20px;
-    transition: .3s;
+.about-text h3{
+    font-family: 'Raleway';
+    font-size: 22px;
+    color: #f89648;
+    margin-bottom: 15px;    
 }
-*/
+.about-text h1{
+    font-size: 32px;
+    font-family: 'Poppins';
+    color: #554ba9;
+    letter-spacing: 1px;
+}
 
-/*.Button1:hover{
-    background: #fff;
-    color: #592147 !important;
-    */
-    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
-    /*box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e;*/ /*new, sublte glow */
-    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
-/*}
-*/
+.about-text p{
+    margin-top: 8px;
+    font-size: 17px;
+    font-family: 'Raleway';
+    color: #555456;
+}
 
-/*
-.Button2{
-    width: 100px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid floralwhite;
-    outline: none;
-    border-radius: 10px;
-    cursor:pointer;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 500;
-    margin-right: 70px;
+#mission{
+    background: url(bg3.png);
+    background-color: #fff;
+}
+
+.mission-text h3{
+    font-family: 'Raleway';
+    font-size: 22px;
+    color: #f89648;
+    margin-bottom: 15px;    
+}
+.mission-text h1{
+    font-size: 32px;
+    font-family: 'Poppins';
+    color: #554ba9;
+    letter-spacing: 1px;
+}
+
+.mission-text p{
+    margin-top: 8px;
+    font-size: 17px;
+    font-family: 'Raleway';
+    color: #555456;
+}
+#services {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the items */
+    height: 100vh; /* Make the container take the full viewport height */
+    margin-top: 70px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.services-text h3 {
+    display: flex; /* Enable flexbox on h3 */
+    justify-content: center; /* Horizontally center the h3 */
+    align-items: center; /* Vertically center the h3 */
+    font-family: 'Raleway';
+    font-size: 22px;
+    color: #f89648;
+    margin-bottom: 15px; 
+}
+.services-text h1 {
+    display: flex; /* Enable flexbox on h3 */
+    justify-content: center; /* Horizontally center the h3 */
+    align-items: center; /* Vertically center the h3 */
+    font-size: 32px;
+    font-family: 'Poppins';
+    color: #554ba9;
+    letter-spacing: 1px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 30px; /* Adds spacing between boxes */
+    max-width: 900px; /* Ensures proper width for three boxes per row */
+    margin-top: 30px;
     margin-left: 10px;
-    transition: 0.4s;
-    */
-    /*margin: 0 auto;*/
-    /*margin-top: 20px;
-    transition: .3s;
 }
-*/
-/*
-.Button2:hover{
-    background: #fff;
-    color: #592147 !important;
-    */
-    /*box-shadow: 0 0 10px #B026FF , 0 0 40px #B026FF ,0 0 80px #B026FF;*/ /*original, pinkish glow*/
-    /*box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e;*/ /*new, sublte glow */
-    /*box-shadow: 0 0 10px #2d0691, 0 0 40px #2d0691, 0 0 80px #2d0691;*/ /*new, stronger glow */
-/*}
-*/
+
+.service-box {
+    flex: 1 1 calc(33.33% - 20px); /* Ensures 3 boxes per row */
+    width: 500px;
+    padding: 27px;
+    border: 1px;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    background-color: #f9ede3;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-box i {
+    font-size: 25px; /* Larger icon size */
+    color: #f89648; /* Icon color */
+    margin-bottom: 15px; /* Space between icon and text */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for icon */
+.service-box:hover i {
+    color: #554ba9; /* Change icon color on hover */
+}
+
+.service-box h3 {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #554ba9;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+/* Hover effect for service box */
+.service-box:hover {
+    background-color: #edebf8;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); 
+    transition: all 0.2s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .service-box {
+        flex: 1 1 calc(50% - 20px); /* 2 per row on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .service-box {
+        flex: 1 1 100%; /* 1 per row on very small screens */
+    }
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: 70px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;  /* Adjusted max-width to accommodate both text and form side by side */
+    justify-content: space-between;
+    text-align: center;  /* Adjust text alignment for better positioning */
+}
+
+.contact-text {
+    flex: 1;
+    max-width: 500px;  /* Limit the width of the text area */
+}
+
+.contact-text h3 {
+    font-size: 22px;
+    color: #f89648;
+}
+
+.contact-text h1 {
+    font-size: 36px;
+    color: #554ba9;
+    margin-bottom: 20px;
+}
+
+/* Contact Box Styling */
+.contact-box {
+    background-color: #ebe9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;  /* Adjusted width to make room for both elements */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize:none;
+}
+
+.submit-btn {
+    background-color: #f89648;
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e07e32;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-text, .contact-box {
+        width: 100%; /* Full width for both on smaller screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+}
+
+#footer-links {
+    background-color: #4b4296;
+    padding: 20px 15px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0;
+    height: 75vh;  /* Set the height of the footer to 75% of the viewport height */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 100%;
+    margin: 50px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f89648;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 8px 0;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s ease-in-out; /* Transition added here */
+    display: flex;
+    align-items: center;
+}
+
+.footer-column ul li a:hover {
+    color: #f89648; /* Change the text color on hover */
+    transform: translateX(5px); /* Slightly move the link to the right on hover */
+}
+
+.footer-column ul li a i {
+    margin-right: 8px; /* Add space between icon and text */
+    background-color: #f89648; /* Circular background */
+    border-radius: 50%; /* Make the background circular */
+    padding: 10px; /* Space inside the circle */
+    width: 30px; /* Set the width of the circle */
+    height: 30px; /* Set the height of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.footer-column ul li a i:hover {
+    background-color: white; /* Change circle background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon inside the circle */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+}
+
+.footer-copyright {
+    text-align: center;
+    background-color: #4b4296;
+    color: white;
+    padding: 50px 0;
+    font-size:14px;
+    margin-bottom: 0;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
