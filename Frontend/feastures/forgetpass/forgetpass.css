@@ -1,87 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: url('../../assets/gradient-background.png') no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #4b4296;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    backdrop-filter: blur(10px);
-    margin-top: 50px;
-}
-
-h2 {
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 1.8em;
-}
-
-p {
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    margin-bottom: 15px;
-    margin-top: 5px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    border: 2px solid #645bb3;
-    border-radius: 5px;
-    font-weight: normal;
-    color: black;
-    background: white;
-}
-
-input::placeholder {
-    color: #aaa;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background: transparent;
-    color: white;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 16px;
-    margin-top: 5px;
-}
-
-button:hover {
-    color: #592147;
-    background: #fff;
-    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e;
-}
-
-#message {
-    color: green;
-    margin-top: 15px;
 }
 
 header {
@@ -94,6 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 99;
     background-color: #4b4296;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -104,21 +31,101 @@ header {
     user-select: none;
 }
 
-.homeButton {
-    display: inline-block;
-    padding: 7px 18px;
-    background: transparent;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 2px solid floralwhite;
-    cursor: pointer;
-    transition: 0.4s;
+/* Background */
+body {
+    background: url('../../assets/bg3.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding: 0 100px;
+    padding-top: 120px; 
 }
 
-.homeButton:hover {
-    background: #fff;
-    color: #592147 !important;
-    box-shadow: 0 0 10px #1b145e, 0 0 40px #1b145e, 0 0 80px #1b145e;
+/* Adjust h1 position */
+h1 {
+    font-size: 50px;
+    color: #4b4296;
+    margin: 0;
+    text-align: center;
 }
+
+p {
+    font-size: 20px;
+    font-family: 'Raleway';
+    color: #555456;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    background: #ebe9fa;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    max-width: 380px;
+    text-align: center;
+    margin-top: 30px; 
+}
+
+/* Form */
+.signup-form h2 {
+    margin-bottom: 20px;
+    color: #4b4296;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin: 15px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #4b4296;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #4b4296;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #4b4296;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -17px;
+    left: 10px;
+    font-size: 12px;
+    color: #4b4296;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #fff;
+    color: #4b4296;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f89648;
+    color: #fff;
+}
+
