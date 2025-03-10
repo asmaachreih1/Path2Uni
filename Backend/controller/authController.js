@@ -18,13 +18,13 @@ exports.forgotPassword = async (req, res) => {
         }
 
         const resetToken = crypto.randomBytes(32).toString('hex');
-        console.log("🔑 Generated Reset Token:", resetToken); // Debugging
+        //console.log("🔑 Generated Reset Token:", resetToken); // Debugging
         
         user.resetPasswordToken = resetToken;
         user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
         
         await user.save();
-        console.log("✅ Reset token saved in database:", user.resetPasswordToken);//newwwwwwwwwwwwwwwwww
+       // console.log("✅ Reset token saved in database:", user.resetPasswordToken);//newwwwwwwwwwwwwwwwww
         
         const resetLink = `http://localhost:5500/Frontend/feastures/confirmpassword/confirmpassword.html?token=${resetToken}`;
 
