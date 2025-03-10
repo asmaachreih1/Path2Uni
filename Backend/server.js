@@ -11,11 +11,15 @@ const app = express();
 const PORT = process.env.PORT || 5001;//l
 
 
-// ✅ PROPERLY CONFIGURE CORS
+//  PROPERLY CONFIGURE CORS
 app.use(cors({
-    origin: 'http://127.0.0.1:5500', // Allow requests from Live Server
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+ // origin: 'http://127.0.0.1:5500', // Allow requests from Live Server
+ origin: ["http://127.0.0.1:5500", "http://localhost:5500"],
+ //methods: ['GET', 'POST', 'PUT', 'DELETE'],
+ methods: "GET,HEAD,PUT,PATCH,POST,DELETE", 
+ //allowedHeaders: ['Content-Type', 'Authorization']
+ allowedHeaders: "Content-Type,Authorization",
+ credentials: true
 }));
 app.use(cors());//l
 
