@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const token = urlParams.get("token"); 
 
     if (!token) {
-        alert("Invalid or missing token.");
+        alert("❌Invalid or missing token.");
         window.location.href = "../login/login.html"; // Redirect to login if token is missing
         return;
     }
@@ -19,18 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validate password length
         if (newPassword.length < 8) {
-            alert("Password must be at least 8 characters long.");
+            alert("⚠️Password must be at least 8 characters long.");
             return;
         }
 
         // Check if passwords match
         if (newPassword !== confirmPassword) {
-            alert("Passwords do not match.");
+            alert("❌Passwords do not match.");
             return;
         }
 
         try {
             // Send password update request to backend
+            console.log("🔹 Sending password reset request to backend..."); // Debugging
             const response = await fetch(`http://localhost:5001/api/reset-password/${token}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -38,16 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const data = await response.json();
-
+            console.log("🔹 Backend Response:", data); // Debugging
+            
             if (response.ok) {
-                alert("Password reset successfully! You can now sign in.");
+                alert("✅ Password reset successfully! You can now sign in.");
                 window.location.href = "../login/login.html"; // Redirect after reset
             } else {
-                alert(`Error: ${data.message}`);
+                alert(`❌Error: ${data.message}`);
             }
         } catch (error) {
-            console.error("Reset password error:", error);
-            alert("Something went wrong. Try again.");
+            console.error("❌Reset password error:", error);
+            alert("❌Something went wrong. Try again.");
         }
     });
 });
