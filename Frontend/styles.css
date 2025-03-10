@@ -96,7 +96,7 @@ header {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('bg1.png');
+    background-image: url('assets/bg1.png');
     /*background-color: #4b4296;*/
     background-size: cover;
     background-position: center;
@@ -217,7 +217,7 @@ section {
 
 #Aboutus{
     margin-top: 20px;
-    background: url('bg2.png');
+    background: url('assets/bg2.png');
     background-color: #fff;
     left: 40px;
 }
@@ -243,7 +243,7 @@ section {
 }
 
 #mission{
-    background: url(bg3.png);
+    background: url('assets/bg3.png');
     background-color: #fff;
 }
 
