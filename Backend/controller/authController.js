@@ -5,6 +5,8 @@ const { sendEmail } = require('../utils/emailService');
 const bcrypt = require('bcrypt');
 const jwt= require("jsonwebtoken");//generate authentication tokens
 
+const TokenBlacklist = require('../models/TokenBlacklist');
+
 exports.forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
@@ -147,7 +149,7 @@ exports.signIn = async (req, res) => {
 
 // SIGN OUT
 
-const TokenBlacklist = require('../models/TokenBlacklist');
+
 
 exports.logout = async (req, res) => {
     const token = req.headers.authorization.split(' ')[1]; // Get the token from the headers
@@ -158,3 +160,47 @@ exports.logout = async (req, res) => {
 
     res.status(200).json({ message: 'Logged out successfully' });
 };
+
+
+
+
+
+
+// DELETE ACCOUNT
+
+exports.deleteAccount = async (req, res) => {
+
+    try {
+
+        // Extract user ID from JWT
+        const userId = req.user.userId; 
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Extract token
+        const authHeader = req.header('Authorization');
+        const token = authHeader && authHeader.split(' ')[1];
+
+        // Verify token
+        if (!token) {
+            return res.status(401).json({ message: 'Unauthorized: No token provided' });
+        }
+
+        // Blacklist token to log the user out
+        const blacklistedToken = new TokenBlacklist({ token });
+        await blacklistedToken.save();
+
+        // Delete user and related data (if applicable)
+        await User.findByIdAndDelete(userId);
+
+        res.status(200).json({ success: true, message: "Account successfully deleted" });
+        
+    } catch (error) {
+        console.error("Delete Account Error:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
