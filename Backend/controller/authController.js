@@ -144,3 +144,17 @@ exports.signIn = async (req, res) => {
     }
 };
 
+
+// SIGN OUT
+
+const TokenBlacklist = require('../models/TokenBlacklist');
+
+exports.logout = async (req, res) => {
+    const token = req.headers.authorization.split(' ')[1]; // Get the token from the headers
+
+    // Add the token to the blacklist
+    const blacklistedToken = new TokenBlacklist({ token });
+    await blacklistedToken.save();
+
+    res.status(200).json({ message: 'Logged out successfully' });
+};
