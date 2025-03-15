@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background: url('../../assets/bg3.png');
     padding-top: 20px; /* To prevent content from being hidden behind header */
 }
 
