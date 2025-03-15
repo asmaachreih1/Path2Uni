@@ -127,9 +127,15 @@ exports.signIn = async (req, res) => {
         //returns the token in the response for the frontend to use
         const token = jwt.sign(
             { userId: user._id },
-            process.env.JWT_SECRET || "fallback_secret",
+            process.env.JWT_SECRET,  // UPDATE FOR DELETE ACCOUNT
             { expiresIn: "1h" }
         );
+
+        // debugging 
+        // FOR delete account
+        console.log("JWT_SECRET being used for signin:", process.env.JWT_SECRET || 'fallback_secret');
+
+
           //exclude pass before sending user data
           const userData = {
             id: user._id,
