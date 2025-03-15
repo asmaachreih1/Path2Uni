@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="transparent-logo.png" alt="Path2Uni Logo" class="logo">
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="profile-def.jpg" alt="Profile Picture" id="profile-img">
+            </div>
+
+            <div class="profile-info">
+                <h2 id="profile-name">John Smith</h2>
+                <p class="profile-email"><span class="profile-label">Email:</span> <span id="profile-email">john.smith@example.com</span></p>
+                <div class="name-container">
+                    <p class="profile-first"><span class="profile-label">First Name:</span> <span id="profile-first">John</span></p>
+                    <p class="profile-last"><span class="profile-label">Last Name:</span> <span id="profile-last">Smith</span></p>
+                </div>
+                <p class="profile-role"><span class="profile-label">Role:</span> <span id="profile-role">Student</span></p>
+                <p class="profile-grade" id="profile-grade" style="display: none;"><span class="profile-label">Grade:</span> <span id="profile-grade-value">12</span></p>
+            
+                <div class="profile-actions">
+                    <a href="edit-profile.html" class="btn">Edit Profile</a>
+                    <a href="delete-account.html" class="btn">Delete Account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Path2Uni</p>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html>
