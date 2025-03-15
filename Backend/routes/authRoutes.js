@@ -1,6 +1,7 @@
 //omar 16/2/2025
 const express = require('express');
-const { forgotPassword, resetPassword, signIn } = require('../controller/authController');
+const { forgotPassword, resetPassword, signIn, deleteAccount } = require('../controller/authController');
+const { authMiddleware } = require('../middleware/authMiddleware'); // DELETE ACCOUNT
 
 const router = express.Router();
 //omar
