@@ -22,3 +22,15 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+// DELETE ACCOUNT
+
+router.delete('/delete-account', authMiddleware, deleteAccount); 
+
+module.exports = router;
+
+
