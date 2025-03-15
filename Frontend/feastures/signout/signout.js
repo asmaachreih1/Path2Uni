@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const signOutButton = document.querySelector('.btnSignOut');
+    const signOutButton = document.querySelector('a[href="#"]');
 
     signOutButton.addEventListener('click', async (event) => {
 
