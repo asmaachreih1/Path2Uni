@@ -35,12 +35,66 @@ header {
     transition: left 0.3s ease-in-out;
 }
 
+/* Container for icons */
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+/* Icon Styles */
+header i {
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background-color: white;
+    color: #4b4296;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+header i:hover {
+    transform: scale(1.1);
+    color: #f89c48;
+}
+
+
+.navigation a {
+    position:relative;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a:not(.home)::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1); 
+    color: #f89648 !important;
+    /*box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite; */
+}
+
 /* Logo Styles */
 .logo {
     height: 50px;
     width: auto;
     user-select: none;
 }
+
 
 /* Scholarship Details Page Styles */
 #scholarship-details {
