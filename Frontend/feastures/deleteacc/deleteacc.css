@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+}
+
+
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+}
+
+header .hdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 7px 18px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid floralwhite;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-right: 50px;
+}
+
+.home-btn:hover {
+    background: #fff;
+    color: #f89648 !important;
+    box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align vertically */
+    height: 100vh;
+    margin: 0;
+    padding-top: 30px; /* Adjust padding to account for header height */
+}
+
+h2{
+
+}
+
+.container {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 350px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    width: auto;
+    flex: 1; 
+    padding: 12px;
+    border: none;
+    background: #4b4296;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Raleway';
+}
+
+button:hover{
+    background-color: #f89c48;
+}
