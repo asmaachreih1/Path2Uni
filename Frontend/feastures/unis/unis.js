@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const universities = document.querySelectorAll(".university");
+    function navigateTo(university) {
+        // Corrected base path (since everything is inside "feastures")
+        const basePath = "/Frontend/feastures/";  
+        window.location.href = `${basePath}${university}/${university}.html`;
+    }
 
-    universities.forEach(university => {
-        university.addEventListener("click", function(event) {
-            event.preventDefault();
-            alert("You selected " + this.innerText.trim());
-            // You can redirect to another page or perform other actions here
+    document.querySelectorAll(".university-card").forEach(card => {
+        card.addEventListener("click", function() {
+            const university = this.getAttribute("data-university");
+            navigateTo(university);
         });
     });
 });
