@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv= "X-UA-Compatible" content = "IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Path2Uni</title>
+    <title>Landing Page</title>
     <link rel="stylesheet" href="landing-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
     <header>
         <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
-        <nav class = "navigation">
-            <a href="../aboutus/aboutus.html">About Us <span></span></a>
-            <a href="../ourmission/ourmission.html">Our mission <span></span></a>
-            <a href="../services/services.html">Services <span></span></a>
-            <a href="../contact/contact.html">Contact Us<span></span></a>
-            <a href="../../index.html" class="btnSignOut">Sign Out</a> <!-- ? NEED: feastures/signout/signout.js to actually implement the feature? -->
-        </nav>
+        <div class="header-icons">
+            <i id="menu-icon" class="fas fa-bars"></i> <!-- Sidebar icon -->
+            <i class="fas fa-user"></i> <!-- Profile icon -->
+            <i class="fas fa-cogs"></i> <!-- Settings icon -->
+        </div>
     </header>
 
-    <div class="content-wrapper">
-        
-            <p> *place holder* entered Path2Uni - singup/signin successful</p> 
+    <!-- SIDEBAR -->
+    <nav id="sidebar">
+        <i id="close-btn" class="fas fa-times"></i> <!-- Close button -->
+        <div class="profile">
+            <img src="../../assets/profile-def.jpg" alt="">
+            <h3>John Smith</h3>
+            <span>Student</span><br>
+            <a href="profile.html" class="btn">View Profile</a>        
+        </div>
+        <ul>
+            <a href="home.html"> <i class="fas fa-home"></i><span>Home</span></a>
+           
+            <!-- sign out, for connecting frontend to backend -->
+            <a href="#"> <i class="fas fa-lock-open"></i><span>Log Out</span></a>
+            
+            <a href="deleteAcc.html"> <i class="fas fa-trash"></i><span>Delete Account</span></a>
+        </ul>
+    </nav>
 
-    </div>
+    <script src="lading-page.js"></script>
+
+    <!-- sign out, for connecting frontend to backend -->
+    <script src="../signout/signout.js"></script>
 
 </body>
 </html>

@@ -243,7 +243,9 @@ section {
 }
 
 #mission{
-    background: url(assets/bg3.png);
+
+
+    background: url('assets/bg3.png');
     background-color: #fff;
 }
 

@@ -42,8 +42,25 @@ loginForm.addEventListener('submit', async function (event) {
         console.log("🛠 Response received:", response); // Debugging leen
 
         if (response.ok) {
+            /*
+            OLD, working for login but not for logout
+
             // If login is successful, redirect to the landing page
             window.location.href = '../landing-page/landing-page.html';
+            */
+
+            // NEW, for LOGOUT
+
+            const data = await response.json(); // Parse the JSON response
+            console.log("Login Response Data:", data); // Debugging
+
+            // Save the token to Local Storage
+            localStorage.setItem('token', data.token);
+
+            // Redirect to the landing page
+            window.location.href = '../landing-page/landing-page.html';
+
+            // NEW - end
         } else {
             // Handle failed login (e.g., wrong credentials)
             alert('Invalid email or password. Please try again.');

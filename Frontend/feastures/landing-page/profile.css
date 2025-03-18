@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('../../assets/signupbg.jpg');
+    padding-top: 60px; /* To prevent content from being hidden behind header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+    display: block;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 7px 18px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid floralwhite;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.home-btn:hover {
+    background: #fff;
+    color: #f89648 !important;
+    box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite;
+}
+
+main {
+    margin-top: 80px; /* To prevent content from overlapping with header */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: flex-start; /* Align profile info and image properly */
+    background-color: #e6e4fe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px; /* Space between profile image and info */
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for profile info */
+    max-width: 500px;
+}
+
+#profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4b4296; /* Color for profile name */
+    margin-bottom: 10px;
+}
+
+/* Label styling for attributes */
+.profile-label {
+    color: #4b4296; /* Dark color for labels */
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Styling for the profile information fields (Email, First Name, etc.) */
+.profile-email,
+.profile-first,
+.profile-last,
+.profile-role,
+.profile-grade{
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.profile-email span,
+.profile-first span,
+.profile-last span,
+.profile-role span,
+.profile-grade span {
+    color: #666666; /* Light gray for the values */
+}
+
+/* Styling for Name Container (First and Last Name next to each other) */
+.name-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-first,
+.profile-last {
+    flex: 1; /* Ensures they stay on the same line */
+}
+
+/* Profile Actions Buttons */
+.profile-actions {
+    margin-top: 20px;
+}
+
+.profile-actions .btn {
+    color: white;
+    background: #4b4296;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-actions .btn:hover {
+    background: none;
+    border: 2px solid  #4b4296;
+    color: #4b4296 !important;
+}
+
+.edit-profile-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.edit-profile-container h2 {
+    color: #4b4296;
+    margin-bottom: 15px;
+}
+
+.edit-profile-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4b4296;
+}
+
+.edit-profile-container input, 
+.edit-profile-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.edit-profile-container button {
+    background-color: #4b4296;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-profile-container button:hover {
+    background-color: #372f87;
+}
+
+
+footer {
+    text-align: center;
+    font-size: small;
+    color: #555;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 40px; /* Smaller logo for smaller screens */
+    }
+
+    .btn {
+        padding: 6px 12px; /* Smaller button padding */
+    }
+
+    .profile-container {
+        flex-direction: column; /* Stack the profile image and info on top of each other */
+        align-items: center;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
