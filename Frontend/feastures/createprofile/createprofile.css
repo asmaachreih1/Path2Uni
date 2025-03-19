@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between; /* Center content horizontally */
+    align-items: center; /* Align vertically */
+    height: 100vh;
+    margin: 0;
+    padding-top: 30px; /* Adjust padding to account for header height */
+}
+
+
+
+h1 {
+    font-size: 50px;
+    color: #4b4296;
+    margin: 0;
+    text-align: center; 
+    margin-left: 230px;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Raleway';
+    color: #555456;
+    text-align: center; /* Align p to the left */
+    margin-top: 10px;
+    margin-left: 230px;
+    
+}
+
+.container {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 350px;
+    text-align: center;
+    margin-right: 150px;
+}
+
+input, select, button {
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Raleway';
+}
+
+input:focus, select:focus {
+    border-color: #f89648;
+    outline: none;
+    box-shadow: 0px 0px 5px #f89648(0, 123, 255, 0.3);
+}
+
+/* Container for name inputs */
+.name-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px; 
+    width: 90%; 
+    font-family: 'Raleway';
+}
+
+.name-container input {
+    width: 48%; 
+    padding: 8px;
+    margin-left: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #4b4296;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Raleway';
+}
+
+#removePicButton {
+    font-size: 12px;
+    background: none;
+    color: #bababa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+    background: #f89648;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Profile Picture Styling */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    background: rgba(204, 204, 204, 0.5); /* Semi-transparent background */
+    color: #4b4296;
+    width: 20px; 
+    height: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+}
+
+.edit-icon:hover {
+    background: rgba(168, 168, 168, 0.8);
+    color: #5a50b4;
+}
+
+.edit-icon i {
+    font-size: 12px;
+}
+
+#profilePic {
+    display: none;
+}

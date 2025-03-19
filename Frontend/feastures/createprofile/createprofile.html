@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup</title>
+    <link rel="stylesheet" href="createprofile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
+    </header>
+
+    <div class="welcome-text">
+        <h1>Welcome!</h1>
+        <p>Let's set up your profile.</p>
+    </div>
+
+    <div class="container">
+        <h2>Create Your Profile</h2>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-pic-container">
+            <img id="preview" src="../../assets/profile-def.jpg" alt="Profile Picture">
+            <label for="profilePic" class="edit-icon">
+                <i class="fas fa-pencil-alt"></i>
+            </label>
+            <input type="file" id="profilePic" accept="image/*" onchange="previewImage()">
+        </div>
+
+        <!-- Button to remove the profile picture -->
+        <button id="removePicButton" class="hidden" onclick="removeProfilePic()">Remove profile picture</button>
+
+        <input type="text" id="username" placeholder="Enter your username" required>
+        <div class="name-container">
+            <input type="text" id="firstname" placeholder="Enter first name" required>
+            <input type="text" id="lastname" placeholder="Enter last name" required>
+        </div>
+        
+
+        <select id="role" onchange="toggleGradeSelection()">
+            <option value="">Select Role</option>
+            <option value="student">Student</option>
+            <option value="mentor">Mentor</option>
+        </select>
+
+        <select id="grade" class="hidden">
+            <option value="">Select Grade</option>
+            <option value="grade1">Grade 10</option>
+            <option value="grade2">Grade 11</option>
+            <option value="grade3">Grade 12</option>    
+        </select>
+
+        <button onclick="submitProfile()">Create Profile</button>
+    </div>
+
+    <script src="createprofile.js"></script>
+</body>
+</html>
