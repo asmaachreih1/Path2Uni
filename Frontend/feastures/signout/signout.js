@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const signOutButton = document.querySelector('a[href="#"]');
+    const signOutButton = document.getElementById("signOutBtn");
 
     signOutButton.addEventListener('click', async (event) => {
 
@@ -34,3 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+document.getElementById("cancelBtn").addEventListener("click", () => {
+    window.location.href = "../landing-page/landing-page.html"; 
+});
