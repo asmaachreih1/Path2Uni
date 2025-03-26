@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Path2Uni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="careers.css">
+</head>
+
+<body>
+    <header>
+        <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
+        <nav class="navigation">
+            <a href="../universities/universities.html">Universities</a>
+            <a href="../scholarships/scholarships.html">Scholarships</a>
+            <a href="../tracking/tracking.html">Tracking</a>
+            <a href="">Careers</a>
+            <a href="../landing-page/landing-page.html" class="home"><i class="fas fa-home"></i></a>
+        </nav>
+    </header>
+
+    <section id="career-fields">
+        <div class="main">
+            <div class="careers-text">
+                <h3>Career Paths</h3>
+                <h1>Explore Your Future Career</h1>
+                <p>Discover exciting career fields and learn from industry professionals.</p>
+            </div>
+
+            <div class="careers-container">
+                <!-- Business Field -->
+                <div class="career-box">
+                    <img src="../../assets/business-career.jpg" alt="Business Career">
+                    <div class="career-content">
+                        <h3>Business</h3>
+                        <p>Explore careers in management, finance, marketing, and entrepreneurship. Business professionals drive organizational success and economic growth.</p>
+                        <ul>
+                            <li><i class="fas fa-briefcase"></i> Common roles: Manager, Analyst, Consultant</li>
+                            <li><i class="fas fa-graduation-cap"></i> Typical education: Business Administration</li>
+                            <li><i class="fas fa-chart-line"></i> Growth potential: High</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Healthcare Field -->
+                <div class="career-box">
+                    <img src="../../assets/healthcare-career.jpg" alt="Healthcare Career">
+                    <div class="career-content">
+                        <h3>Healthcare</h3>
+                        <p>Join the rewarding field of healthcare, helping people through medicine, nursing, research, and public health initiatives.</p>
+                        <ul>
+                            <li><i class="fas fa-user-md"></i> Common roles: Doctor, Nurse, Therapist</li>
+                            <li><i class="fas fa-graduation-cap"></i> Typical education: Medical/Nursing School</li>
+                            <li><i class="fas fa-heartbeat"></i> Growth potential: Very High</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technology Field -->
+                <div class="career-box">
+                    <img src="../../assets/tech-career.jpg" alt="Technology Career">
+                    <div class="career-content">
+                        <h3>Technology</h3>
+                        <p>Shape the future with careers in software development, data science, cybersecurity, and emerging technologies.</p>
+                        <ul>
+                            <li><i class="fas fa-code"></i> Common roles: Developer, Engineer, Analyst</li>
+                            <li><i class="fas fa-graduation-cap"></i> Typical education: Computer Science/Engineering</li>
+                            <li><i class="fas fa-rocket"></i> Growth potential: Extremely High</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mentor-insights">
+        <div class="main">
+            <div class="insights-text">
+                <h3>Industry Insights</h3>
+                <h1>Learn From Professionals</h1>
+                <p>Get valuable advice and perspectives from mentors in various fields.</p>
+            </div>
+
+            <div class="insights-container" id="insightsContainer">
+                <!-- Post form for mentors (hidden by default) -->
+                <div class="post-form-container" id="postFormContainer">
+                    <div class="post-form">
+                        <h3>Share Your Insights</h3>
+                        <form id="mentorPostForm">
+                            <div class="form-group">
+                                <label for="mentorName">Your Full Name</label>
+                                <input type="text" id="mentorName" required placeholder="e.g. Sarah Johnson">
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorField">Your Field of Expertise</label>
+                                <input type="text" id="mentorField" required placeholder="e.g. Software Engineering">
+                            </div>
+                            <div class="form-group">
+                                <label for="mentorBackground">Your Professional Background</label>
+                                <textarea id="mentorBackground" rows="2" required placeholder="e.g. Senior Developer at TechCorp with 8 years of experience in web applications"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="postTitle">Insight Title</label>
+                                <input type="text" id="postTitle" required placeholder="e.g. Breaking Into the Tech Industry in 2025">
+                            </div>
+                            <div class="form-group">
+                                <label for="postContent">Your Insights</label>
+                                <textarea id="postContent" rows="5" required placeholder="Share your professional advice, experiences, or tips for students..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Post Insight</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Posts will be loaded here from backend -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading insights...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-links">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Gmail</h3>
+                <ul>
+                    <li><a href="mailto:info@path2uni.com"><i class="fas fa-envelope"></i> info@path2uni.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../landing-page/landing-page.html">Home</a></li>
+                    <li><a href="../universities/universities.html">Universities</a></li>
+                    <li><a href="../tracking/tracking.html">Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Popular Links</h3>
+                <ul>
+                    <li><a href="../scholarships/scholarships.html">Scholarships</a></li>
+                    <li><a href="">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2025 Path2Uni. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script src="careers.js"></script>
+
+</body>
+</html>
+
+
