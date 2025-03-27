@@ -36,7 +36,7 @@ header {
 .navigation {
     display: flex;
     justify-content: center;
-    gap: 22px;
+    gap: 30px;
 }
 
 /* Icon Styles */
