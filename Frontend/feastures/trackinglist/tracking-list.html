@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="tracking-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
+        <nav class="navigation">
+            <a href="../landing-page/landing-page.html" class = home><i class="fas fa-home"></i></a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="todo-app">
+            <h2>
+                <i class="checklist-icon"></i>
+                Application Check-List
+            </h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask( )">Add</button>
+            </div>
+            <ul id="list-container">
+                <li>SAT Scores</li>
+                <li>Highschool Grades</li>
+                <li>Passport-size Photo</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="tracking-list.js"></script>
+
+</body>
+</html>

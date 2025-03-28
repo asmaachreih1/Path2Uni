@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+    background: #efeeee;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Icon Styles */
+header i {
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background-color: white;
+    color: #4b4296;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+header i:hover {
+    transform: scale(1.1);
+    color: #f89c48;
+}
+
+
+.navigation a {
+    position:relative;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a:not(.home)::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1); 
+    color: #f89648 !important;
+    /*box-shadow: 0 0 10px floralwhite, 0 0 20px floralwhite, 0 0 20px floralwhite; */
+}
+
+/* Logo Styles */
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+}
+
+/* Container for icons */
+.header-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+/* Icon Styles */
+header i {
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background-color: white;
+    color: #4b4296;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+header i:hover {
+    transform: scale(1.1);
+    color: #f89c48;
+}
+
+
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Initially hidden */
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    color: #4b4296;
+    padding-top: 30px; /* Reduced padding-top to move items up */
+    transition: left 0.3s ease-in-out;
+    z-index: 98;
+    padding-left: 10px;
+}
+
+#sidebar .profile {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+#sidebar .profile img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .profile h3 {
+    font-size: 18px;
+    color: #4b4296;
+}
+
+#sidebar .profile span {
+    font-size: 12px;
+    color: #a1a1a1;
+}
+
+/* Button Styling */
+.btn {
+    color: white;
+    background: #4b4296;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 6px 20px; /* Added horizontal padding for better appearance */
+    width: 100%;
+    margin-top: 15px; /* Increased margin-top for better spacing */
+    display: inline-block; /* Makes the button behave like a block for easier spacing */
+    font-size: 14px;
+    transition: left 0.8s ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.06);
+    color: white;
+    background: #f89c48;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #edeef0;
+    padding: 10px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 20px;
+}
+
+.todo-app h2{
+    color: #4b4296;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checklist-icon {
+    width: 32px;
+    height: 32px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234b4296"><path d="M3 6h11v2H3V6zm0 5h11v2H3v-2zm0 5h11v2H3v-2zM20.3 6.7l-1.4-1.4L15 9.2 13.1 7.3l-1.4 1.4L15 12.1l5.3-5.4z"/></svg>') no-repeat center;
+    background-size: contain;
+    display: inline-block;
+}
+  
+.todo-app img{
+    width: 50px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 12px 32px;
+    background: #f89c48;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 14px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: url('Untitled.png');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #4b4296;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(pcheck.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #34423f;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+    color: #4b4296;
+    border-radius: 50%;
+}
