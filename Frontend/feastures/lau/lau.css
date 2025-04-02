@@ -132,6 +132,24 @@ th {
     color: white;
 }
 
+/* Footer */
+footer {
+    background: #4b4296;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
 
+footer a {
+    color: #f89648;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 
 
