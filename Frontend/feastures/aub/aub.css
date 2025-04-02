@@ -55,3 +55,13 @@ h1 {
     font-weight: 600;
     color: white;
 }
+
+.back-button {
+    background: white;
+    color: #4b4296;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
