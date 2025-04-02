@@ -19,5 +19,57 @@ body {
     text-align: center;
 }
 
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #4b4296;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.back-button {
+    background: white;
+    color: #4b4296;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #f89648;
+    color: white;
+}
+
 
 
