@@ -13,7 +13,7 @@ router.get('/user/role', authMiddleware, getUserRole);
     const user = await User.findById(req.user.userId);
     res.json({ role: user.role });
   } catch (error) {
-    res.status(500).json({ message: 'Failed to fetch user role' });
+    res.status(500).json({ message: 'Failed to fetch user role!' });
   }*/
 
 //omar
