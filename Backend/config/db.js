@@ -5,7 +5,7 @@ mongoose.connect('mongodb+srv://asmaachreih:Asmaa123@cluster0.l0745.mongodb.net/
   useUnifiedTopology: true
 })
 .then(() => console.log('MongoDB Connected Successfully!'))
-.catch((err) => console.error('MongoDB Connection Failed:', err));
+.catch((err) => console.error('MongoDB Connection Failed', err));
 
 
 module.exports = connectDB;

@@ -9,8 +9,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <!-- Header (Matches BAU Page) -->
     <header>
         <div class="header-content">
             <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
@@ -18,6 +16,8 @@
             <a href="../landing-page/landing-page.html" class="back-button">Back to Home</a>
         </div>
     </header>
+
+    <!-- First 3 universities in a grid -->
     <div class="university-list">
         <div class="university-card" data-university="bau">
             <img src="bau-campus.jpg" alt="BAU Campus">
@@ -25,9 +25,9 @@
             <p class="location">Beirut, Lebanon</p>
             <p>One of Lebanon’s oldest universities, offering diverse programs.</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/BeirutArabUniversity/"target="_blank" rel="noopener noreferrer" title="bau facebook"><i class="fab fa-facebook"></i></a>
-                <a href=" https://www.instagram.com/beirutarabuniversity/?hl=en"target="_blank" rel="noopener noreferrer"title="bau instagram"><i class="fab fa-instagram"></i></a>
-                <a href=" https://www.linkedin.com/school/beirut-arab-university/"target="_blank" rel="noopener noreferrer" title="bau linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/BeirutArabUniversity/" target="_blank" rel="noopener noreferrer" title="bau facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/beirutarabuniversity/?hl=en" target="_blank" rel="noopener noreferrer" title="bau instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/beirut-arab-university/" target="_blank" rel="noopener noreferrer" title="bau linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="university-card" data-university="lau">
@@ -36,9 +36,9 @@
             <p class="location">Beirut & Byblos, Lebanon</p>
             <p>A globally recognized university with top-notch programs.</p>
             <div class="social-links">
-                <a href=" https://www.facebook.com/LebaneseAmericanUniversity/"target="_blank" rel="noopener noreferrer" title ="lau facebook"><i class="fab fa-facebook"></i></a>
-                <a href=" https://www.instagram.com/lebamericanuni/?hl=en"target="_blank" rel="noopener noreferrer" title="lau instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/school/lebanese-american-university/"target="_blank" rel="noopener noreferrer" title="lau linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/LebaneseAmericanUniversity/" target="_blank" rel="noopener noreferrer" title="lau facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lebamericanuni/?hl=en" target="_blank" rel="noopener noreferrer" title="lau instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/lebanese-american-university/" target="_blank" rel="noopener noreferrer" title="lau linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="university-card" data-university="lu">
@@ -47,19 +47,23 @@
             <p class="location">Lebanon (Public University)</p>
             <p>The only public university in Lebanon, offering affordable education.</p>
             <div class="social-links">
-                <a href=" https://www.facebook.com/ul.edu.lb/"target="_blank" rel="noopener noreferrer" title="lu facebook"><i class="fab fa-facebook"></i></a>
-                <a href=" https://www.instagram.com/lebanese.university"target="_blank" rel="noopener noreferrer"title="lu instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/ul.edu.lb/" target="_blank" rel="noopener noreferrer" title="lu facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lebanese.university" target="_blank" rel="noopener noreferrer" title="lu instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+    </div>
+
+    <!-- Last 2 universities centered in a flex row -->
+    <div class="university-row-centered">
         <div class="university-card" data-university="aub">
             <img src="aub-campus.jpg" alt="AUB Campus">
             <h3>American University of Beirut</h3>
             <p class="location">Beirut, Lebanon</p>
             <p>AUB is a leading university in the Middle East with a strong reputation.</p>
             <div class="social-links">
-                <a href=" https://www.facebook.com/aub.edu.lb/"target="_blank" rel="noopener noreferrer" title="aub facebook"><i class="fab fa-facebook"></i></a>
-                <a href=" https://www.instagram.com/aub_lebanon/?hl=en"target="_blank" rel="noopener noreferrer" title="aub instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/school/american-university-of-beirut/"target="_blank" rel="noopener noreferrer" title="aub linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/aub.edu.lb/" target="_blank" rel="noopener noreferrer" title="aub facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/aub_lebanon/?hl=en" target="_blank" rel="noopener noreferrer" title="aub instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/american-university-of-beirut/" target="_blank" rel="noopener noreferrer" title="aub linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="university-card" data-university="usj">
@@ -68,10 +72,11 @@
             <p class="location">Beirut, Lebanon</p>
             <p>One of the top private universities in Lebanon, known for academic excellence.</p>
             <div class="social-links">
-                <a href=" https://www.facebook.com/usj.edu.lb/"target="_blank" rel="noopener noreferrer" title="usj facebook"><i class="fab fa-facebook"></i></a>
-                <a href=" https://www.instagram.com/usjliban/?hl=en"target="_blank" rel="noopener noreferrer" title="usj instagram"><i class="fab fa-instagram"></i></a>
-                <a href=" https://www.linkedin.com/school/usjliban/"target="_blank" rel="noopener noreferrer" title="usj linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/usj.edu.lb/" target="_blank" rel="noopener noreferrer" title="usj facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/usjliban/?hl=en" target="_blank" rel="noopener noreferrer" title="usj instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/usjliban/" target="_blank" rel="noopener noreferrer" title="usj linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>
-    
+</body>
+</html>

@@ -1,24 +1,28 @@
 // API Endpoints (replace with your actual backend endpoints)
 const API_ENDPOINTS = {
-    getUserRole: '/api/user/role',
-    getMentorPosts: '/api/mentors/posts',
-    createMentorPost: '/api/mentors/posts/create'
+    getUserRole: 'http://localhost:5001/api/user/role',
+    getMentorPosts: 'http://localhost:5001/jobs/mentors/posts',
+    createMentorPost: 'http://localhost:5001/jobs/mentors/posts/create'
 };
 
 // DOM Elements
 const insightsContainer = document.getElementById('insightsContainer');
 const postFormContainer = document.getElementById('postFormContainer');
+console.log("postFormContainer found?", postFormContainer);
+// 🔧 Get token from localStorage
+const token = localStorage.getItem('token'); // 🔧 Added to use JWT token
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         // 1. Get current user role
         const role = await fetchUserRole();
-        
+       //const role = 'Mentor';
         // 2. Set up mentor insights section
         if (role === 'Mentor') {
             postFormContainer.style.display = 'block';
             document.getElementById('mentorPostForm').addEventListener('submit', handlePostSubmit);
+            console.log("✅ Forced post form visible (DEV MODE)");
         } else {
             postFormContainer.style.display = 'none';
         }
@@ -34,13 +38,23 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 // Fetch user role from backend
 async function fetchUserRole() {
-try {
+try {   
+    const token = localStorage.getItem('token'); // ✅ Get token from localStorage
+    console.log("Fetching user role with token:", token);
+
         const response = await fetch(API_ENDPOINTS.getUserRole, {
-            credentials: 'include'
+           
+
+            //method: 'GET',
+            headers: { // 🔧 Modified to include token
+                'Authorization': `Bearer ${token}` // 🔧 Add token here
+            }
+
         });
         
         if (!response.ok) throw new Error('Failed to fetch user role');
         const data = await response.json();
+        console.log("Fetched user role:", data.role); // ✅ Log it
         return data.role;
     } catch (error) {
         console.error('Error fetching user role:', error);
@@ -54,9 +68,11 @@ async function loadMentorPosts() {
         const response = await fetch(API_ENDPOINTS.getMentorPosts);
         
         if (!response.ok) throw new Error('Failed to fetch mentor posts');
-        const posts = await response.json();
-
+        const responseData = await response.json();
+        const posts = responseData.posts || responseData; // support both styles neww
+        console.log("Fetched mentor posts:", posts); // ✅neww
         renderMentorPosts(posts);
+
     } catch (error) {
         console.error('Error loading mentor posts:', error);
         showError('Failed to load mentor insights. Please refresh the page.');
@@ -76,6 +92,8 @@ function renderMentorPosts(posts) {
     // Clear existing posts (keep form if present)
     const existingPosts = insightsContainer.querySelectorAll('.mentor-post');
     existingPosts.forEach(post => post.remove());
+   // insightsContainer.innerHTML = ''; // ✅ clears all old/static posts
+
 
     if (!posts || posts.length === 0) {
         insightsContainer.innerHTML += `
@@ -122,15 +140,26 @@ async function handlePostSubmit(e) {
         showError('Please fill in all fields');
         return;
     }
-
+ // ✅ Retrieve token from localStorage
+ /*const token = localStorage.getItem('token'); 
+ if (!token) {
+     showError('You are not authorized to post. Please sign in as a mentor.');
+     return;
+ }
+ console.log("📦 Submitting post with token:", localStorage.getItem('token'));*/
+ const token = localStorage.getItem('token'); // 🔑 Make sure to get it here in case it was null earlier
+console.log("📦 Submitting post with token:", token); // ✅ Keep for debugging
     try {
         
     const response = await fetch(API_ENDPOINTS.createMentorPost, {
+        
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}` // ✅ attach token from login
+
             },
-            credentials: 'include',
+           // credentials: 'include',
             body: JSON.stringify({ 
                 mentorName,
                 mentorField, 

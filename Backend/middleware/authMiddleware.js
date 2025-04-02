@@ -1,4 +1,7 @@
 const jwt = require('jsonwebtoken');
+
+const User = require('../models/user');
+
 // for signout
 const TokenBlacklist = require('../models/TokenBlacklist'); 
 
@@ -15,14 +18,15 @@ exports.authMiddleware = async (req, res, next) => {
   return res.status(401).json({ message: 'Access Denied! No token provided.' });
 }
 
-const token = authHeader.split(" ")[1]; 
+const token = authHeader && authHeader.split(" ")[1];
 
 // Debugging Line
 console.log("Extracted Token:", token); 
 
   //if no token is found it returns error 401 which means it is unauthorized
-  if (!token) {
-    return res.status(401).json({ message: 'No token, authorization denied' });
+  // ✅ Prevent "Bearer null", "Bearer undefined", etc.
+  if (!token || token === 'null' || token === 'undefined') {
+    return res.status(401).json({ message: 'No valid token provided.' });
   }
 //check if the token is valid
 //if valid it extracts the user’s ID and attaches it to the req.user
@@ -45,8 +49,18 @@ console.log("Extracted Token:", token);
 
     // Debugging Line
     console.log("JWT Decoded:", decoded); 
+  // req.user = decoded;
+    //Fetch full user to get role (added)
+    const user = await User.findById(decoded.userId); 
+    if (!user) return res.status(401).json({ message: 'User not found' }); 
    
-    req.user = decoded;
+    //Attach more info to req.user (role especially)
+    req.user = { 
+      userId: decoded.userId, 
+      email: user.email,      
+      role: user.role         
+    }; 
+   
     next();
   } catch (error) {
     // Debugging Line
