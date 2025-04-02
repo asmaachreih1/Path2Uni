@@ -110,3 +110,24 @@ ul {
 ul li {
     margin-bottom: 8px;
 }
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #f89648;
+    color: white;
+}
