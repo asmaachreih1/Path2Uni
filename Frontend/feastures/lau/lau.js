@@ -4,6 +4,7 @@ function toggleDetails(id) {
         details.style.display = "block";
     } else {
         details.style.display = "none";
- 
+   }
+}
 
 
