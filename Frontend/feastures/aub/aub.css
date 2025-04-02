@@ -65,3 +65,8 @@ h1 {
     font-weight: bold;
     transition: 0.3s;
 }
+
+.back-button:hover {
+    background: #f89648;
+    color: white;
+}
