@@ -2,7 +2,7 @@ require('dotenv').config();  // This loads the .env file
 
 const express = require('express');
 const mongoose = require('mongoose');
-
+const checklistRoutes = require('./routes/checklistRoutes');
 const cors =require('cors');//l
 const authRoutes = require('./routes/authRoutes');//l
 const jobRoutes = require('./routes/jobRoutes');
