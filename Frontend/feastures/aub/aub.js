@@ -5,5 +5,4 @@ function toggleDetails(id) {
     } else {
         details.style.display = "none";
     }
-
-
+}
