@@ -49,3 +49,9 @@ header {
     width: auto;
     user-select: none;
 }
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
