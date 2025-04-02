@@ -71,5 +71,67 @@ h1 {
     color: white;
 }
 
+/* Sections */
+section {
+    background: rgba(75, 66, 150, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #f89648;
+}
+
+p, li {
+    font-size: 16px;
+    font-family: 'Raleway';
+    color: white;
+}
+
+/* List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #f89648;
+    color: white;
+}
+
+
 
 
