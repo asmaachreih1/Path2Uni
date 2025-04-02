@@ -43,3 +43,9 @@ header {
     width: 100%;
     max-width: 1200px;
 }
+
+.logo {
+    height: 50px;
+    width: auto;
+    user-select: none;
+}
