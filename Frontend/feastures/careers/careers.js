@@ -16,8 +16,8 @@ const token = localStorage.getItem('token'); // 🔧 Added to use JWT token
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         // 1. Get current user role
-       // const role = await fetchUserRole();
-       const role = 'Mentor';
+        const role = await fetchUserRole();
+       //const role = 'Mentor';
         // 2. Set up mentor insights section
         if (role === 'Mentor') {
             postFormContainer.style.display = 'block';
