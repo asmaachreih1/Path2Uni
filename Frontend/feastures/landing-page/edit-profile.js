@@ -72,3 +72,118 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(fileInput); // Append file input to body
 });
+
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+    // Load current profile data
+    try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        // Fetch current profile data
+        const response = await fetch("http://localhost:5001/api/profile", {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch profile");
+        }
+
+        const data = await response.json();
+        const user = data.user;
+
+        // Populate form fields
+        document.getElementById("profile-name").textContent = user.username;
+        document.getElementById("profile-email").textContent = user.email;
+        
+        const roleSelect = document.getElementById("profile-role-select");
+        roleSelect.value = user.role;
+        
+        const gradeSelect = document.getElementById("profile-grade-select");
+        gradeSelect.value = user.grade || "N/A";
+
+        // Show/hide grade based on role
+        function toggleGradeVisibility() {
+            document.querySelector(".profile-grade").style.display = 
+                roleSelect.value === "Student" ? "block" : "none";
+        }
+        
+        roleSelect.addEventListener("change", toggleGradeVisibility);
+        toggleGradeVisibility(); // Initial check
+
+    } catch (error) {
+        console.error("Error loading profile:", error);
+        alert("Failed to load profile data");
+    }
+
+    // Save functionality
+    document.getElementById("save-btn").addEventListener("click", async function() {
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            const updatedData = {
+                username: document.getElementById("profile-name").textContent,
+                role: document.getElementById("profile-role-select").value,
+                grade: document.getElementById("profile-role-select").value === "Student" 
+                    ? document.getElementById("profile-grade-select").value 
+                    : undefined
+            };
+
+            const response = await fetch("http://localhost:5001/api/edit-profile", {
+                method: "PUT",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedData)
+            });
+
+            if (response.ok) {
+                alert("Profile updated successfully!");
+                window.location.href = "profile.html"; // Redirect to profile page
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Failed to update profile");
+            }
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert(error.message);
+        }
+    });
+
+    // Make name editable (similar to your existing implementation)
+    const profileName = document.getElementById("profile-name");
+    profileName.addEventListener("click", function() {
+        if (this.getAttribute("data-editable") === "false") {
+            const currentValue = this.textContent;
+            const input = document.createElement("input");
+            input.type = "text";
+            input.value = currentValue;
+            input.classList.add("edit-input");
+
+            this.replaceWith(input);
+            input.focus();
+
+            const saveChanges = () => {
+                const newValue = input.value.trim() || currentValue;
+                this.textContent = newValue;
+                input.replaceWith(this);
+            };
+
+            input.addEventListener("blur", saveChanges);
+            input.addEventListener("keypress", function(e) {
+                if (e.key === "Enter") saveChanges();
+            });
+        }
+    });
+});
