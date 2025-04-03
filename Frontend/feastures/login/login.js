@@ -1,3 +1,5 @@
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 const loginForm = document.getElementById('loginForm');
 
 function validateForm() {
@@ -32,7 +34,7 @@ loginForm.addEventListener('submit', async function (event) {
 
     try {
         // Make a POST request to your backend for authentication
-        const response = await fetch('http://localhost:5001/api/signin', {
+        const response = await fetch(`${API_BASE_URL}/api/signin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
