@@ -20,50 +20,35 @@
 
     <main>
         <div class="profile-container">
-            <div class="profile-image">
-                <!-- Profile Image -->
-                <img src="../../assets/profile-def.jpg" alt="Profile Picture" id="profile-img" onclick="document.getElementById('file-input').click();">
-                
-                <!-- Pencil Icon to Edit Profile Picture -->
-                <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click();"></i>
-                
-                <!-- Hidden File Input -->
-                <input type="file" id="file-input" style="display:none;" onchange="changeProfilePic(event)">
-            </div>
 
             <div class="profile-info">
-                <h2 id="profile-name" class="editable" data-editable="false">John Smith</h2>
+                <h2 id="profile-name" class="editable" data-editable="false"> </h2>
                 <p class="profile-email">
                     <span class="profile-label">Email:</span>
-                    <span id="profile-email" class="editable" contenteditable="false" data-editable="false">john.smith@example.com</span>
+                    <span id="profile-email" class="editable" contenteditable="false" data-editable="false"> </span>
                 </p>
-                <div class="name-container">
-                    <p class="profile-first">
-                        <span class="profile-label">First Name:</span>
-                        <span id="profile-first" class="editable" contenteditable="false" data-editable="false">John</span>
-                    </p>
-                    <p class="profile-last">
-                        <span class="profile-label">Last Name:</span>
-                        <span id="profile-last" class="editable" contenteditable="false" data-editable="false">Smith</span>
-                    </p>
-                </div>
+                
                 <p class="profile-role">
-                    <span class="profile-label">Role:</span> <span id="profile-role">Student</span>
+                    <span class="profile-label">Role:</span>
+                    <select id="profile-role-select" class="editable">
+                        <option value="Student">Student</option>
+                        <option value="Mentor">Mentor</option>
+                    </select>
                 </p>
 
                 <!-- Updated Grade Section with Select Dropdown -->
                 <p class="profile-grade">
                     <span class="profile-label">Grade:</span>
                     <select id="profile-grade-select" class="editable">
-                        <option value="10" selected>Grade 10</option>
-                        <option value="11">Grade 11</option>
-                        <option value="12">Grade 12</option>
+                        <option value="N/A">N/A</option>
+                        <option value="Grade 10">Grade 10</option>
+                        <option value="Grade 11">Grade 11</option>
+                        <option value="Grade 12">Grade 12</option>
                     </select>
                 </p>
             
                 <div class="profile-actions">
-                    <a href="save-profile.html" class="btn">Save Changes</a>
-                    <a href="delete-account.html" class="btn">Delete Account</a>
+                    <a button id="save-btn" class="btn">Save Changes</a>
                 </div>
             </div>
         </div>

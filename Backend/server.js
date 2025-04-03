@@ -1,31 +1,30 @@
+
 require('dotenv').config();  // This loads the .env file
 
-const express = require('express');
 const mongoose = require('mongoose');
+const express = require('express');
+
 const checklistRoutes = require('./routes/checklistRoutes');
-const cors =require('cors');//l
-const authRoutes = require('./routes/authRoutes');//l
-const jobRoutes = require('./routes/jobRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 5001;
+
+
+const authRoutes = require('./routes/authRoutes');
+
+const jobRoutes = require('./routes/jobRoutes');
+
+const cors =require('cors');
+app.use(cors());
 
 // Middleware to parse JSON
-app.use(express.json());//l
-//app.use(cors());
-app.use(cors({
-  origin: 'http://127.0.0.1:5500', // allow Live Server
-  credentials: true
-}));
-//l
-
+app.use(express.json());
+app.use('/api', authRoutes);
 
 //Routes
-app.use('/api', authRoutes);//l
 app.use('/jobs', jobRoutes);
 console.log('Job routes loaded');
 
-
-const PORT = process.env.PORT || 5001;//l
 // Mongo URI from .env file
 const mongoURI = process.env.MONGODB_URI;
 

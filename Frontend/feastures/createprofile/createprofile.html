@@ -21,24 +21,18 @@
     <div class="container">
         <h2>Create Your Profile</h2>
 
-        <!-- Profile Picture Section -->
-        <div class="profile-pic-container">
-            <img id="preview" src="../../assets/profile-def.jpg" alt="Profile Picture">
-            <label for="profilePic" class="edit-icon">
-                <i class="fas fa-pencil-alt"></i>
-            </label>
-            <input type="file" id="profilePic" accept="image/*" onchange="previewImage()">
-        </div>
-
-        <!-- Button to remove the profile picture -->
-        <button id="removePicButton" class="hidden" onclick="removeProfilePic()">Remove profile picture</button>
-
-        <input type="text" id="username" placeholder="Enter your username" required>
-        <div class="name-container">
-            <input type="text" id="firstname" placeholder="Enter first name" required>
-            <input type="text" id="lastname" placeholder="Enter last name" required>
-        </div>
         
+        
+        <div class="profile-image">
+            <!-- Profile Image -->
+            <img src="../../assets/profile-def.jpg" alt="Profile Picture" id="profile-img" onclick="document.getElementById('file-input').click();">
+            
+            <!-- Pencil Icon to Edit Profile Picture -->
+            <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click();"></i>
+            
+            <!-- Hidden File Input -->
+            <input type="file" id="file-input" style="display:none;" onchange="changeProfilePic(event)">
+        </div>
 
         <select id="role" onchange="toggleGradeSelection()">
             <option value="">Select Role</option>
@@ -53,7 +47,7 @@
             <option value="grade3">Grade 12</option>    
         </select>
 
-        <button onclick="submitProfile()">Create Profile</button>
+        <button id="submit-btn">Create Profile</button>
     </div>
 
     <script src="createprofile.js"></script>

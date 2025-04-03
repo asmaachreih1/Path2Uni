@@ -137,6 +137,16 @@ header i:hover {
     text-align: center;
 }
 
+#sidebar .student-icon {
+    font-size: 7rem; /* Adjust size as needed */
+    color: #4b4296; 
+    background: white;
+    border-radius: 70%;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+/*
 #sidebar .profile img {
     width: 90px;
     height: 90px;
@@ -146,7 +156,7 @@ header i:hover {
 }
 
 #sidebar .profile h3 {
-    font-size: 18px;
+    font-size: 18p x;
     color: #4b4296;
 }
 
@@ -154,6 +164,7 @@ header i:hover {
     font-size: 12px;
     color: #a1a1a1;
 }
+*/
 
 /* Button Styling */
 .btn {

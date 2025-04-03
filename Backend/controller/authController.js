@@ -1,4 +1,5 @@
-//omar
+
+
 const User = require('../models/user');
 const crypto = require('crypto');
 const { sendEmail } = require('../utils/emailService');
@@ -139,8 +140,10 @@ exports.signIn = async (req, res) => {
           //exclude pass before sending user data
           const userData = {
             id: user._id,
+            username: user.username,
             email: user.email,
-            name: user.name,
+            role: user.role,
+            grade: user.grade
         };
 
         //send response
@@ -210,3 +213,55 @@ exports.deleteAccount = async (req, res) => {
     }
 };
 
+
+// GET PROFILE INFO
+
+exports.getProfile = async (req, res) => {
+    try {
+        const userId = req.user.userId; // Extract user ID from authMiddleware
+        const user = await User.findById(userId).select('-password -resetPasswordToken -resetPasswordExpires'); // Exclude password from response
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json({ user });
+    } catch (error) {
+        console.error("Error fetching profile:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+// EDIT PROFILE
+
+exports.editProfile = async (req, res) => {
+    try {
+        const userId = req.user.userId; // Get the user ID from the authenticated request
+        const { username, role, grade } = req.body;
+
+        // Find the user by ID
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Update profile fields
+        user.username = username || user.username;
+        user.role = role || user.role;
+
+        // Update role-specific fields
+        if (role === 'Student') {
+            user.grade = grade || user.grade;
+        } 
+
+        // Save the updated user
+        await user.save();
+
+        res.status(200).json({ message: "Profile updated successfully", user });
+    } catch (error) {
+        console.error("Profile Update Error:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+ 
