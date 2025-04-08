@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     function navigateTo(university) {
-        const basePath = "/Frontend/feastures/";  
+        const basePath = "/feastures/";  
         window.location.href = `${basePath}${university}/${university}.html`;
     }
 
