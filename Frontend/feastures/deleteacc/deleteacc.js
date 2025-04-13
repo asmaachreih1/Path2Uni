@@ -1,3 +1,5 @@
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const deleteAccountButton = document.getElementById("deleteAccountBtn");
@@ -10,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Send a DELETE request to the backend
-            const response = await fetch('http://localhost:5001/api/delete-account', {
+            const response = await fetch(`${API_BASE_URL}/api/delete-account`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include JWT token
