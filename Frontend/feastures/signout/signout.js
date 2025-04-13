@@ -1,3 +1,4 @@
+const API_BASE_URL = 'https://path2uni.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             try {
                 // Send a POST request to the logout endpoint
-                const response = await fetch('http://localhost:5001/api/logout', {
+                const response = await fetch(`${API_BASE_URL}/api/logout`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include the JWT token
