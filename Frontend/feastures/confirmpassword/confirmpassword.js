@@ -1,3 +1,6 @@
+
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 document.addEventListener("DOMContentLoaded", function () {
     // Get the token from the URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             // Send password update request to backend
             console.log("🔹 Sending password reset request to backend..."); // Debugging
-            const response = await fetch(`http://localhost:5001/api/reset-password/${token}`, {
+            const response = await fetch(`${API_BASE_URL}/api/reset-password/${token}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ newPassword }),
