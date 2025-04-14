@@ -14,5 +14,8 @@ exports.createJob = async (req, res) => {
     res.status(500).json({ message: 'Failed to post job', error: err.message });
   }
 };
-
+exports.getAllJobs = async (req, res) => {
+  const jobs = await Job.find().populate('postedBy', 'email');
+  res.json(jobs);
+};
 
