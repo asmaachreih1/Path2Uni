@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
 
 /* Global Styles */
 * {
@@ -88,11 +90,13 @@ section {
 
 h2 {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 h3 {
+    font-family: 'Raleway';
+    font-size: 18px;
     color: #f89648;
 }
 
@@ -145,7 +149,6 @@ footer {
 
 footer a {
     color: #f89648;
-    text-decoration: none;
     font-weight: bold;
 }
 
