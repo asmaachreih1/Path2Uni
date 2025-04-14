@@ -1,7 +1,4 @@
-const express = require('express');
-const router = express.Router();
-const { forgotPassword, resetPassword, signIn, deleteAccount, getProfile, editProfile } = require('../controller/authController');
-const { authMiddleware } = require('../middleware/authMiddleware'); // DELETE ACCOUNT
+
 
 
 
