@@ -2,91 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University Selection</title>
+    <title>Universities - Path2Uni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="unis.css">
-    <script defer src="unis.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
-            <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
-            <nav class="navigation">
-                <a href="../landing-page/landing-page.html" class ="home"><i class="fas fa-home"></i></a>
-            </nav>   
+        <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
+        <nav class="navigation">
+            <a href="../landing-page/landing-page.html" class="home"><i class="fas fa-home"></i></a>
+        </nav>
     </header>
 
-    <section id="universities">
+    <section id="career-fields">
         <div class="main">
-            <div class="universities-text">
-                <h3>Discover Universities</h3>
-                <h1>Find Your Dream University</h1>
+            <div class="careers-text">
+                <h3>Universities</h3>
+                <h1>Explore Your Future University</h1>
                 <p>Browse top universities in Lebanon and find the perfect fit for your academic journey.</p>
             </div>
-        
-            <!-- First 3 universities in a grid -->
-            <div class="university-list">
-                <div class="university-card" data-university="bau">
-                  <img src="bau-campus.jpg" alt="BAU Campus">
-                    <h3>Beirut Arab University</h3>
-                    <p class="location">Beirut, Lebanon</p>
-                    <p>One of Lebanon’s oldest universities, offering diverse programs.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/BeirutArabUniversity/" target="_blank" rel="noopener noreferrer" title="bau facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/beirutarabuniversity/?hl=en" target="_blank" rel="noopener noreferrer" title="bau instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/beirut-arab-university/" target="_blank" rel="noopener noreferrer" title="bau linkedin"><i class="fab fa-linkedin"></i></a>
+
+            <div class="careers-container" onclick="window.location.href='../bau/bau.html';">
+                <div class="career-box">
+                    <img src="bau-campus.jpg" alt="BAU Campus">
+                    <div class="career-content">
+                        <h3>Beirut Arab University</h3>
+                        <p class="location">Beirut, Lebanon</p>
+                        <p>One of Lebanon’s oldest universities, offering diverse programs.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/BeirutArabUniversity/" target="_blank" rel="noopener noreferrer" title="bau facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/beirutarabuniversity/?hl=en" target="_blank" rel="noopener noreferrer" title="bau instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/school/beirut-arab-university/" target="_blank" rel="noopener noreferrer" title="bau linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="university-card" data-university="lau">
+
+                <div class="career-box" onclick="window.location.href='../lau/lau.html';">
                     <img src="lau-campus.jpg" alt="LAU Campus">
-                    <h3>Lebanese American University</h3>
-                    <p class="location">Beirut & Byblos, Lebanon</p>
-                    <p>A globally recognized university with top-notch programs.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/LebaneseAmericanUniversity/" target="_blank" rel="noopener noreferrer" title="lau facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/lebamericanuni/?hl=en" target="_blank" rel="noopener noreferrer" title="lau instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/lebanese-american-university/" target="_blank" rel="noopener noreferrer" title="lau linkedin"><i class="fab fa-linkedin"></i></a>
+                    <div class="career-content">
+                        <h3>Lebanese American University</h3>
+                        <p class="location">Beirut & Byblos, Lebanon</p>
+                        <p>A globally recognized university with top-notch programs.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/LebaneseAmericanUniversity/" target="_blank" rel="noopener noreferrer" title="lau facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/lebamericanuni/?hl=en" target="_blank" rel="noopener noreferrer" title="lau instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/school/lebanese-american-university/" target="_blank" rel="noopener noreferrer" title="lau linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="university-card" data-university="lu">
+
+                <div class="career-box" onclick="window.location.href='../lu/lu.html';">
                     <img src="lu-campus.png" alt="LU Campus">
-                    <h3>Lebanese University</h3>
-                    <p class="location">Lebanon (Public University)</p>
-                    <p>The only public university in Lebanon, offering affordable education.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/ul.edu.lb/" target="_blank" rel="noopener noreferrer" title="lu facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/lebanese.university" target="_blank" rel="noopener noreferrer" title="lu instagram"><i class="fab fa-instagram"></i></a>
+                    <div class="career-content">
+                        <h3>Lebanese University</h3>
+                        <p class="location">Lebanon (Public University)</p>
+                        <p>The only public university in Lebanon, offering affordable education.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/ul.edu.lb/" target="_blank" rel="noopener noreferrer" title="lu facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/lebanese.university" target="_blank" rel="noopener noreferrer" title="lu instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <!-- Last 2 universities centered in a flex row -->
-            <div class="university-row-centered">
-                <div class="university-card" data-university="aub">
+
+                <div class="career-box" onclick="window.location.href='../aub/aub.html';">
                     <img src="aub-campus.jpg" alt="AUB Campus">
-                    <h3>American University of Beirut</h3>
-                    <p class="location">Beirut, Lebanon</p>
-                    <p>AUB is a leading university in the Middle East with a strong reputation.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/aub.edu.lb/" target="_blank" rel="noopener noreferrer" title="aub facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/aub_lebanon/?hl=en" target="_blank" rel="noopener noreferrer" title="aub instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/american-university-of-beirut/" target="_blank" rel="noopener noreferrer" title="aub linkedin"><i class="fab fa-linkedin"></i></a>
+                    <div class="career-content">
+                        <h3>American University of Beirut</h3>
+                        <p class="location">Beirut, Lebanon</p>
+                        <p>AUB is a leading university in the Middle East with a strong reputation.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/aub.edu.lb/" target="_blank" rel="noopener noreferrer" title="aub facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/aub_lebanon/?hl=en" target="_blank" rel="noopener noreferrer" title="aub instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/school/american-university-of-beirut/" target="_blank" rel="noopener noreferrer" title="aub linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="university-card" data-university="usj">
+
+                <div class="career-box" onclick="window.location.href='../usj/usj.html';">
                     <img src="usj-campus.png" alt="USJ Campus">
-                    <h3>Saint Joseph University</h3>
-                    <p class="location">Beirut, Lebanon</p>
-                    <p>One of the top private universities in Lebanon, known for academic excellence.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/usj.edu.lb/" target="_blank" rel="noopener noreferrer" title="usj facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/usjliban/?hl=en" target="_blank" rel="noopener noreferrer" title="usj instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/school/usjliban/" target="_blank" rel="noopener noreferrer" title="usj linkedin"><i class="fab fa-linkedin"></i></a>
+                    <div class="career-content">
+                        <h3>Saint Joseph University</h3>
+                        <p class="location">Beirut, Lebanon</p>
+                        <p>One of the top private universities in Lebanon, known for academic excellence.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/usj.edu.lb/" target="_blank" rel="noopener noreferrer" title="usj facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/usjliban/?hl=en" target="_blank" rel="noopener noreferrer" title="usj instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/school/usjliban/" target="_blank" rel="noopener noreferrer" title="usj linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </section>
+
 
     <section id="footer-links">
         <div class="footer-container">
@@ -116,8 +127,8 @@
             <div class="footer-column">
                 <h3>Popular Links</h3>
                 <ul>
-                    <li><a href="">Scholarships</a></li>
-                    <li><a href="../careers/careers.html">Careers</a></li>
+                    <li><a href="../scholarships/scholarships.html">Scholarships</a></li>
+                    <li><a href="">Careers</a></li>
                 </ul>
             </div>
         </div>
@@ -126,6 +137,10 @@
             <p>&copy; 2025 Path2Uni. All rights reserved.</p>
         </div>
     </section>
-    
+
+    <script src="unis.js"></script>
+
 </body>
 </html>
+
+
