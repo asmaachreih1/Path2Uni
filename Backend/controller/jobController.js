@@ -15,7 +15,7 @@ exports.createJob = async (req, res) => {
   }
 };
 
-
+exports.getAllJobs = async (req, res) => {
   const jobs = await Job.find().populate('postedBy', 'email');
   res.json(jobs);
 };
