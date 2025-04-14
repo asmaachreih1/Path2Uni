@@ -1,5 +1,5 @@
 const express = require('express');
-
+const router = express.Router();
 const Job = require('../models/Job');
 const { authMiddleware } = require('../middleware/authMiddleware'); // ✅ fixed
 const verifyMentor = require('../middleware/verifyMentor');
