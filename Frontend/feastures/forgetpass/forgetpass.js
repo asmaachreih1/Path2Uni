@@ -1,3 +1,6 @@
+
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 document.getElementById("forgot-password-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -12,7 +15,7 @@ document.getElementById("forgot-password-form").addEventListener("submit", async
 
     try {
          console.log("Sending password reset request for:", email);//new
-        const response = await fetch("http://localhost:5001/api/forgot-password", {  // Ensure backend is running
+        const response = await fetch(`${API_BASE_URL}/api/forgot-password`, {  // Ensure backend is running
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

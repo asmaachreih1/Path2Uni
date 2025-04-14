@@ -1,3 +1,6 @@
+
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 // JavaScript to handle the role-based logic
 window.onload = function() {
     const roleElement = document.getElementById("profile-role");
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        const response = await fetch("http://localhost:5001/api/profile", {  // Updated port
+        const response = await fetch(`${API_BASE_URL}/api/profile`, {  // Updated port
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,

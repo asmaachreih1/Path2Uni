@@ -1,3 +1,6 @@
+
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 document.addEventListener("DOMContentLoaded", function () {
     // Function to make a field editable when clicked
     function makeEditable(elementId) {
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         // Fetch current profile data
-        const response = await fetch("http://localhost:5001/api/profile", {
+        const response = await fetch(`${API_BASE_URL}/api/profile`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -139,7 +142,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     : undefined
             };
 
-            const response = await fetch("http://localhost:5001/api/edit-profile", {
+            const response = await fetch(`${API_BASE_URL}/api/edit-profile`, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${token}`,

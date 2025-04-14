@@ -1,3 +1,4 @@
+
 const API_BASE_URL = 'https://path2uni.onrender.com';
 
 const loginForm = document.getElementById('loginForm');

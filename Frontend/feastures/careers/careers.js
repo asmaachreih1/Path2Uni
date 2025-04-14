@@ -1,8 +1,11 @@
+
+const API_BASE_URL = 'https://path2uni.onrender.com';
+
 // API Endpoints (replace with your actual backend endpoints)
 const API_ENDPOINTS = {
-    getUserRole: 'http://localhost:5001/api/user/role',
-    getMentorPosts: 'http://localhost:5001/jobs/mentors/posts',
-    createMentorPost: 'http://localhost:5001/jobs/mentors/posts/create'
+    getUserRole: `${API_BASE_URL}/api/user/role`,
+    getMentorPosts: `${API_BASE_URL}/jobs/mentors/posts`,
+    createMentorPost: `${API_BASE_URL}/jobs/mentors/posts/create`
 };
 
 // DOM Elements
