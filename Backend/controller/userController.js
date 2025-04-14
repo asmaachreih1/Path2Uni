@@ -1,4 +1,4 @@
-
+const User = require('../models/user');
 
 exports.getUserRole = async (req, res) => {
     try {
