@@ -1,5 +1,14 @@
 
-const API_BASE_URL = 'https://path2uni.onrender.com';
+let API_BASE_URL = ''; // Declare the variable
+
+// Check if the app is running on localhost
+if (window.location.hostname === 'localhost') {
+    API_BASE_URL = 'http://localhost:5001';  // Local development server
+} else {
+    API_BASE_URL = 'https://path2uni.onrender.com';  // Production server
+}
+
+console.log("API Base URL:", API_BASE_URL);
 
 document.addEventListener('DOMContentLoaded', () => {
 
