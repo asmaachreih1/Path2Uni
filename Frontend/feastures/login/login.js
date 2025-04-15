@@ -69,8 +69,13 @@ loginForm.addEventListener('submit', async function (event) {
             // Save the token to Local Storage
             localStorage.setItem('token', data.token);
 
-            // Redirect to the landing page
-            window.location.href = '../landing-page/landing-page.html';
+             // Redirect to the landing page or admin dashboard
+            
+            //if (data.isAdmin) {
+                window.location.href = "../admin/admin.html";
+              //} else {
+                window.location.href = "../landing-page/landing-page.html";
+              //}
 
             // NEW - end
         } else {
