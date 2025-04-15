@@ -71,11 +71,11 @@ loginForm.addEventListener('submit', async function (event) {
 
              // Redirect to the landing page or admin dashboard
             
-            //if (data.isAdmin) {
+            if (data.isAdmin) {
                 window.location.href = "../admin/admin.html";
-              //} else {
+              } else {
                 window.location.href = "../landing-page/landing-page.html";
-              //}
+            }
 
             // NEW - end
         } else {
