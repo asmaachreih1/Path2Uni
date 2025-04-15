@@ -1,16 +1,4 @@
 
-console.log("Hostname:", window.location.hostname);
-
-let API_BASE_URL = '';
-
-// Check if the app is running on localhost
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    API_BASE_URL = 'http://localhost:5001';  // Local development server
-} else {
-    API_BASE_URL = 'https://path2uni.onrender.com';  // Production server
-}
-
-console.log("API Base URL:", API_BASE_URL);
 
 
 const loginForm = document.getElementById('loginForm');
@@ -74,11 +62,14 @@ loginForm.addEventListener('submit', async function (event) {
 
              // Redirect to the landing page or admin dashboard
             
-            if (data.isAdmin) {
+
+             // TEMPORARY, FOR TESTING ADMIN:
+            //if (data.isAdmin) {
                 window.location.href = "../admin/admin.html";
-              } else {
-                window.location.href = "../landing-page/landing-page.html";
-            }
+              //}// else {
+               // window.location.href = "../landing-page/landing-page.html";
+            //}
+            // ^ TEMPORARY, FOR TESTING ADMIN ONLY.
 
             // NEW - end
         } else {

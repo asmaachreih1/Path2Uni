@@ -1,1 +1,68 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <img src="../../assets/transparent-logo.png" alt="Path2Uni Logo" class="logo">
+        <div class="header-icons">
+            <i id="menu-icon" class="fas fa-bars"></i> <!-- Sidebar icon -->
+            
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav id="sidebar">
+        <i id="close-btn" class="fas fa-times"></i> <!-- Close button -->
+        <ul>
+            <!-- sign out, for connecting frontend to backend -->
+            <a href="../signout-admin/signout-admin.html"> <i class="fas fa-lock-open"></i><span>Log Out</span></a>
+            
+        </ul>
+    </nav>
+
+    <section id="admin-dashboard">
+        <div class="dashboard-text">
+          <h3>Admin Dashboard</h3>
+          <h1>Welcome, Admin!</h1>
+          <p>Manage content and users from here.</p>
+        </div>
+
+
+
+        <div class="cards-container">
+
+            <div class="dashboard-card" onclick="location.href='../admin-users/admin-users.html'">
+                <i class="fas fa-users"></i>
+                <h2>Path2Uni Users</h2>
+              </div>
+            
+
+          <div class="dashboard-card" onclick="location.href='../admin-mentorsposts/admin-mentorsposts.html'">
+            <i class="fas fa-newspaper"></i>
+            <h2>Mentors' Posts</h2>
+          </div>
+    
+        </div>
+      </section>
+
+        
+
+    <script src="../../config.js"></script>
+
+    <!-- sign out, for connecting frontend to backend -->
+    <script src="../signout-admin/signout-admin.js"></script>
+
+    <script src="admin.js"></script>
+
+    
+
+</body>
+</html>

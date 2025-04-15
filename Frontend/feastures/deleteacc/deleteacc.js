@@ -1,16 +1,5 @@
 
-console.log("Hostname:", window.location.hostname);
 
-let API_BASE_URL = '';
-
-// Check if the app is running on localhost
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    API_BASE_URL = 'http://localhost:5001';  // Local development server
-} else {
-    API_BASE_URL = 'https://path2uni.onrender.com';  // Production server
-}
-
-console.log("API Base URL:", API_BASE_URL);
 
 
 document.addEventListener('DOMContentLoaded', () => {

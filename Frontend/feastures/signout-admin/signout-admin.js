@@ -45,7 +45,8 @@ const cancelButton = document.getElementById("cancelBtn");
 if (cancelButton != null) {
 
     cancelButton.addEventListener("click", () => {
-        window.location.href = "../landing-page/landing-page.html"; 
+        //window.location.href = "../landing-page/landing-page.html"; 
+        window.location.href = "../admin/admin.html";
     });
     
 }
