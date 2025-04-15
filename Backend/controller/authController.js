@@ -78,8 +78,7 @@ exports.resetPassword = async (req, res) => {
 };
 
 //leen
-
-
+  
 //sign in handler
 //searches for the user in the database using email
 //if the email doesn’t exist it returns error 400
@@ -126,11 +125,22 @@ exports.signIn = async (req, res) => {
 
         //creates a JWT token using the user's ID
         //returns the token in the response for the frontend to use
-        const token = jwt.sign(
+
+       /* const token = jwt.sign(
             { userId: user._id },
             process.env.JWT_SECRET,  // UPDATE FOR DELETE ACCOUNT
             { expiresIn: "1h" }
-        );
+        );*/
+        const token = jwt.sign(
+            {
+              userId: user._id,
+              email: user.email,
+              isAdmin: user.isAdmin || false
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+          );//new 14/4
+          
 
         // debugging 
         // FOR delete account
@@ -143,6 +153,7 @@ exports.signIn = async (req, res) => {
             username: user.username,
             email: user.email,
             role: user.role,
+            isAdmin: user.isAdmin || false,//neww 14/4
             grade: user.grade
         };
 

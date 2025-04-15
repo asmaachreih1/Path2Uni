@@ -9,6 +9,8 @@ const cors = require('cors');
 const checklistRoutes = require('./routes/checklistRoutes');
 const authRoutes = require('./routes/authRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const adminRoutes = require('./routes/adminRoutes');//new 14/4
+
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -22,7 +24,12 @@ app.use(express.json());
 // API Routes
 app.use('/api', authRoutes);
 app.use('/jobs', jobRoutes);
+app.use('/api/admin', adminRoutes);//new 14/4
 console.log('Job routes loaded');
+
+
+console.log('Admin routes loaded');//new 14/4
+
 
 // Mongo URI from .env file
 const mongoURI = process.env.MONGODB_URI;
