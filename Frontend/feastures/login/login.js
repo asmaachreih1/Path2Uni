@@ -62,13 +62,13 @@ loginForm.addEventListener('submit', async function (event) {
 
              // Redirect to the landing page or admin dashboard
             
-
+            const BASE_PATH = "../";
              // TEMPORARY, FOR TESTING ADMIN:
-            if (data.isAdmin) {
-                window.location.href = "../admin/admin.html";
-              //}// else {
-               // window.location.href = "../landing-page/landing-page.html";
-            //}
+            if (data.user.isAdmin) {
+                 window.location.href = `${BASE_PATH}admin/admin.html`;
+           } else {
+           window.location.href = `${BASE_PATH}landing-page/landing-page.html`;
+           }
             // ^ TEMPORARY, FOR TESTING ADMIN ONLY.
 
             // NEW - end
