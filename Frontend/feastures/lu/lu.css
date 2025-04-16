@@ -10,8 +10,7 @@
 }
 
 body {
-    background: url('../../assets/signinbg.jpg') no-repeat center center/cover;
-    
+    background:#fce5d3;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,20 +85,20 @@ h1 {
 
 /* Sections */
 section {
-    background: rgba(75, 66, 150, 0.9);
+    background: #ebe9fa;
     backdrop-filter: blur(10px);
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     width: 100%;
     text-align: center;
-    color: white;
+    color: #4b4296;
 }
 
 h2 {
-    color: white;
+    color: #4b4296;
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -113,7 +112,7 @@ h3 {
 p, li {
     font-size: 16px;
     font-family: 'Raleway';
-    color: white;
+    color: #555456;
 }
 
 /* List */
@@ -134,7 +133,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid white;
+    border: 1px solid #4b4296;
 }
 
 th, td {
@@ -151,17 +150,20 @@ th {
 footer {
     background: #4b4296;
     color: white;
-    padding: 15px;
-    width: 100%;
+    padding: 20px 15px;
+    width: 100vw;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 footer a {
     color: #f89648;
-    font-weight: bold;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+footer p{
+    color: white;
 }
