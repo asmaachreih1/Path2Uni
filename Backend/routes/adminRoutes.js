@@ -40,4 +40,15 @@ router.delete('/mentors/posts/delete/:id', authMiddleware, verifyAdmin, async (r
   }
 });
 
+
+// Delete a user
+router.delete('/users/delete/:id', authMiddleware, verifyAdmin, async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.json({ message: 'User deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete user', error: err.message });
+  }
+});
+
 module.exports = router;

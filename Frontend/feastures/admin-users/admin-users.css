@@ -62,8 +62,8 @@ header {
 
 
 
-/* Insights Section */
-.insights-container {
+/* Users Section */
+.users-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
@@ -71,12 +71,12 @@ header {
 
 
 
-#mentor-insights {
+#website-users {
   padding: 100px 20px 50px;
   /*background-color: #fff;*/
 }
 
-.insights-text h3 {
+.users-text h3 {
   font-family: 'Raleway';
   font-size: 22px;
   color: #f89648;
@@ -84,7 +84,7 @@ header {
   text-align: center;
 }
 
-.insights-text h1 {
+.users-text h1 {
   font-size: 32px;
   font-family: 'Poppins';
   color: #554ba9;
@@ -92,7 +92,7 @@ header {
   text-align: center;
 }
 
-.insights-text p {
+.users-text p {
   font-size: 17px;
   font-family: 'Raleway';
   color: #555456;
@@ -101,7 +101,7 @@ header {
 }
 
 
-/* Mentor Posts */
+/* replace mentor-post with user */
 .mentor-post {
   background-color: #f9ede3;
   padding: 25px;

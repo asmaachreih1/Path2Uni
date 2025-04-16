@@ -3,104 +3,113 @@
 
 
 const API_ENDPOINTS = {
-    getMentorPosts: `${API_BASE_URL}/jobs/mentors/posts`,
-    deleteMentorPost: `${API_BASE_URL}/jobs/mentors/posts/delete`, // Assuming this endpoint exists
+    getUsers: `${API_BASE_URL}/users`,
+    deleteMentorPost: `${API_BASE_URL}/users/delete`, // Assuming this endpoint exists
 };
 
-const insightsContainer = document.getElementById('insightsContainer');
+const usersContainer = document.getElementById('usersContainer');
 const token = localStorage.getItem('token');
 
 // Initialize the admin page
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        await loadMentorPosts();
+        await loadUsers();
     } catch (error) {
         console.error('Admin init error:', error);
         showError('Failed to load admin content.');
     }
 });
 
+
 // Load mentor posts
-async function loadMentorPosts() {
+async function loadUsers() {
     try {
-        const response = await fetch(API_ENDPOINTS.getMentorPosts);
+        const response = await fetch(API_ENDPOINTS.getUsers, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
         if (!response.ok) throw new Error('Failed to fetch posts');
-        const responseData = await response.json();
-        const posts = responseData.posts || responseData;
-        console.log("Admin fetched posts:", posts);
-        renderMentorPosts(posts);
+        const users = await response.json();
+        console.log("Admin fetched users:", users);
+        
+        
+        // Filter out admins
+        const nonAdminUsers = users.filter(user => !user.isAdmin);
+        renderUsers(nonAdminUsers);
     } catch (error) {
-        console.error('Error loading mentor posts:', error);
-        showError('Could not load mentor posts.');
+        console.error('Error loading users:', error);
+        showError('Could not load users.');
     }
 }
 
-// Render posts with delete button for each
-function renderMentorPosts(posts) {
-    insightsContainer.innerHTML = ''; // Clear previous content
 
-    if (!posts || posts.length === 0) {
-        insightsContainer.innerHTML = `
+
+
+
+
+// Render users with delete button
+function renderUsers(users) {
+    usersContainer.innerHTML = ''; // Clear previous content
+
+    if (!users || users.length === 0) {
+        usersContainer.innerHTML = `
             <div class="no-results">
                 <i class="fas fa-info-circle"></i>
-                <p>No mentor insights available.</p>
+                <p>No users available.</p>
             </div>
         `;
         return;
     }
 
-    posts.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.className = 'mentor-post';
-        postElement.innerHTML = `
+    users.forEach(user => {
+        const userElement = document.createElement('div');
+        userElement.className = 'mentor-post'; // Keeping class name for consistent style
+        userElement.innerHTML = `
             <div class="post-header">
                 <div class="post-author">
-                    <h4>${post.mentorName}</h4>
-                    <p>${post.mentorField} - ${post.mentorBackground}</p>
+                    <h4>${user.username}</h4>
+                    <p>${user.role} - ${user.grade}</p>
                 </div>
             </div>
-            <h3 class="post-title">${post.title}</h3>
-            <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
-            <div class="post-date">Posted on ${formatDate(post.createdAt)}</div>
-            <button class="delete-btn" data-id="${post._id}" title="Delete this post">
-  <i class="fas fa-trash-alt"></i> Delete
-</button>
-
+            <div class="post-content">
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>User ID:</strong> ${user._id}</p>
+            </div>
+            <button class="delete-btn" data-id="${user._id}" title="Delete this user">
+                <i class="fas fa-trash-alt"></i> Delete
+            </button>
         `;
 
-        // Attach delete handler
-        postElement.querySelector('.delete-btn').addEventListener('click', () => handleDeletePost(post._id));
-        insightsContainer.appendChild(postElement);
+        userElement.querySelector('.delete-btn').addEventListener('click', () => handleDeleteUser(user._id));
+        usersContainer.appendChild(userElement);
     });
 }
 
-// Delete a post by ID
-async function handleDeletePost(postId) {
-    if (!confirm('Are you sure you want to delete this post?')) return;
+
+
+// Delete a user by ID
+async function handleDeleteUser(userId) {
+    if (!confirm('Are you sure you want to delete this user?')) return;
 
     try {
-        const response = await fetch(`${API_ENDPOINTS.deleteMentorPost}/${postId}`, {
+        const response = await fetch(`${API_ENDPOINTS.deleteUser}/${userId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         });
 
-        if (!response.ok) throw new Error('Failed to delete post');
+        if (!response.ok) throw new Error('Failed to delete user');
 
-        // Refresh posts after deletion
-        await loadMentorPosts();
+        // Reload users
+        await loadUsers();
     } catch (error) {
-        console.error('Error deleting post:', error);
-        showError('Failed to delete the post.');
+        console.error('Error deleting user:', error);
+        showError('Failed to delete the user.');
     }
 }
 
-// Format date nicely
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-}
 
 // Show error message
 function showError(message) {
@@ -110,8 +119,9 @@ function showError(message) {
         <i class="fas fa-exclamation-triangle"></i>
         <p>${message}</p>
     `;
-    insightsContainer.insertBefore(errorElement, insightsContainer.firstChild);
+    usersContainer.insertBefore(errorElement, usersContainer.firstChild);
     setTimeout(() => errorElement.remove(), 5000);
 }
+
 
 
