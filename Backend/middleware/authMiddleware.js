@@ -58,7 +58,8 @@ console.log("Extracted Token:", token);
     req.user = { 
       userId: decoded.userId, 
       email: user.email,      
-      role: user.role         
+      role: user.role,   
+      isAdmin: user.isAdmin  // ✅ ADD THIS      
     }; 
    
     next();

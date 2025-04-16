@@ -19,3 +19,21 @@ exports.getAllJobs = async (req, res) => {
   res.json(jobs);
 };
 
+
+// ✅ Delete mentor post by ID (Admin only)
+exports.deleteMentorPost = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const deletedPost = await Job.findByIdAndDelete(postId);
+
+    if (!deletedPost) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+
+    res.json({ message: 'Mentor post deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting mentor post:', error);
+    res.status(500).json({ message: 'Server error while deleting post' });
+  }
+};
+

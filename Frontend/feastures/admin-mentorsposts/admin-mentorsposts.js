@@ -4,7 +4,9 @@
 
 const API_ENDPOINTS = {
     getMentorPosts: `${API_BASE_URL}/jobs/mentors/posts`,
-    deleteMentorPost: `${API_BASE_URL}/jobs/mentors/posts/delete`, // Assuming this endpoint exists
+   // deleteMentorPost: `${API_BASE_URL}/jobs/mentors/posts/delete`, // Assuming this endpoint exists
+   deleteMentorPost: `${API_BASE_URL}/jobs/admin/mentors/posts/delete`
+
 };
 
 const insightsContainer = document.getElementById('insightsContainer');

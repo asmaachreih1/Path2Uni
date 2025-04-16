@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job');
 const { authMiddleware } = require('../middleware/authMiddleware'); // ✅ fixed
+const verifyAdmin = require('../middleware/verifyAdmin');
+const jobController = require('../controller/jobController');
 const verifyMentor = require('../middleware/verifyMentor');
 
 // ✅ GET all mentor posts
@@ -43,6 +45,8 @@ router.post('/mentors/posts/create', authMiddleware, verifyMentor, async (req, r
     }
 });
 
+// ✅ DELETE a mentor post by ID (admin only)
+router.delete('/admin/mentors/posts/delete/:id', authMiddleware, verifyAdmin, jobController.deleteMentorPost);
 
 // Simulated test endpoint
 router.get('/mentors/simulated', (req, res) => {
