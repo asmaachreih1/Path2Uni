@@ -20,9 +20,14 @@ window.onload = function() {
 
 document.addEventListener("DOMContentLoaded", async function () {
     try {
+
+        const loading = document.getElementById("loading");
+        const profileContainer = document.getElementById("profile-container");
+        
         const token = localStorage.getItem("token"); // Ensure user is authenticated
         if (!token) {
             console.error("No auth token found.");
+            loading.innerText = "Not logged in.";
             return;
         }
 
@@ -50,10 +55,23 @@ document.addEventListener("DOMContentLoaded", async function () {
             } else {
                 gradeContainer.style.display = "none";
             }
+
+
+            
+            // Hide loader, show content
+            loading.style.display = "none";
+            profileContainer.style.display = "flex";
+
+
+
         } else {
             console.error("Error fetching profile:", data.message);
         }
     } catch (error) {
+
         console.error("Unexpected error:", error);
+
+        document.getElementById("loading").innerText = "Something went wrong.";
+
     }
 });

@@ -79,8 +79,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", async function () {
+
     // Load current profile data
     try {
+
+        
+    
+        
+    const loading = document.getElementById("loading");
+    const profileContainer = document.getElementById("profile-container");
+
+    
+
         const token = localStorage.getItem("token");
         if (!token) {
             window.location.href = "login.html";
@@ -120,9 +130,21 @@ document.addEventListener("DOMContentLoaded", async function () {
         roleSelect.addEventListener("change", toggleGradeVisibility);
         toggleGradeVisibility(); // Initial check
 
+
+
+
+            
+    // Hide loader, show content
+    loading.style.display = "none";
+    profileContainer.style.display = "flex";
+
+
+
+
     } catch (error) {
         console.error("Error loading profile:", error);
         alert("Failed to load profile data");
+        profileContainer.style.display = "none";
     }
 
     // Save functionality
