@@ -64,7 +64,7 @@ loginForm.addEventListener('submit', async function (event) {
             
 
              // TEMPORARY, FOR TESTING ADMIN:
-            //if (data.isAdmin) {
+            if (data.isAdmin) {
                 window.location.href = "../admin/admin.html";
               //}// else {
                // window.location.href = "../landing-page/landing-page.html";
