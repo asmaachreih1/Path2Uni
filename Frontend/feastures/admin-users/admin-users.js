@@ -3,8 +3,9 @@
 
 
 const API_ENDPOINTS = {
-    getUsers: `${API_BASE_URL}/users`,
-    deleteMentorPost: `${API_BASE_URL}/users/delete`, // Assuming this endpoint exists
+    //getUsers: `${API_BASE_URL}/users`,
+    getUsers: `${API_BASE_URL}/api/admin/users`,
+    deleteUser: `${API_BASE_URL}/api/admin/users/delete`, // Assuming this endpoint exists
 };
 
 const usersContainer = document.getElementById('usersContainer');
