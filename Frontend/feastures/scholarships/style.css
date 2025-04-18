@@ -171,6 +171,7 @@ header i:hover {
     .main {
         flex-direction: column;
         align-items: center;
+        padding: 15px;
     }
 
     .contact-text, .contact-box {

@@ -304,10 +304,94 @@ header i:hover {
     padding: 50px 0;
     font-size:14px;
     margin-bottom: 0;
+    width: 100%;
 }
 
 .footer-copyright p {
     margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    /* General Styles */
+    body {
+        margin-left: 0;
+    }
+
+    /* Scholarships Page */
+    #scholarships {
+        padding-top: 80px;
+    }
+
+    .scholarships-text h1 {
+        font-size: 24px;
+    }
+
+    .scholarships-text h3 {
+        font-size: 18px;
+    }
+
+    .scholarships-text p {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .scholarships-container {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .scholarship-box {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .scholarship-box img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .scholarship-box h3 {
+        font-size: 22px;
+    }
+
+    .scholarship-box p {
+        font-size: 16px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 0 15px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+
+    .footer-column ul li a i {
+        width: 25px;
+        height: 25px;
+        padding: 6px;
+    }
+
+    .footer-copyright {
+        padding: 30px 10px;
+        font-size: 12px;
+    }
 }
 
 

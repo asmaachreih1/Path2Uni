@@ -293,5 +293,83 @@ a{
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    /* Responsive adjustments */
+    header {
+        padding: 15px 20px;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+
+    header i {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .career-box {
+        flex: 1 1 100%;
+    }
+
+    .careers-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices */
+    body {
+        padding-top: 80px; /* Adjust padding for header */
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    header i {
+        font-size: 13px;
+        padding: 5px 7px;
+    }
+
+    .career-box {
+        flex: 1 1 100%;
+    }
+
+    .career-content h3 {
+        font-size: 20px;
+    }
+
+    .career-content p {
+        font-size: 14px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+
+    .footer-copyright {
+        font-size: 12px;
+        padding: 20px 0;
+    }
+}
+
 
 

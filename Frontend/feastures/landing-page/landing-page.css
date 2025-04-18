@@ -639,9 +639,112 @@ main {
     padding: 50px 0;
     font-size:14px;
     margin-bottom: 0;
+    width: 100%;
+    left: 0;
 }
 
 .footer-copyright p {
     margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .scholarship-box {
+        flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
+    }
+
+    .navigation a {
+        font-size: 14px; /* Smaller font size for smaller screens */
+        margin-left: 20px; /* Less space between menu items */
+    }
+
+    .header-icons {
+        gap: 15px; /* Reduce the space between icons */
+    }
+
+    /* Sidebar Styles for Tablets */
+    #sidebar {
+        width: 250px;
+    }
+
+    /* Main content styles */
+    main {
+        padding: 120px 15px; /* Adjust for smaller screens */
+    }
+
+    /* Testimonials and Community sections */
+    .testimonial-container, .community-container {
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    .testimonial-box, .community-box {
+        flex: 1 1 calc(50% - 20px); /* Two items per row */
+    }
+}
+
+@media (max-width: 768px) {
+
+    body{
+        padding-top: 80px;
+    }
+    .navigation {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Optional: allows wrapping if space is tight */
+    }
+
+    .navigation a {
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .scholarship-box {
+        flex: 1 1 100%; /* Single column layout */
+    }
+
+    /* Sidebar Styles for Mobile */
+    #sidebar {
+        width: 100%;
+        left: -100%; /* Initially hidden */
+    }
+
+    #sidebar.open {
+        left: 0;
+    }
+
+    /* Main content styles */
+    main {
+        padding: 120px 10px;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer columns */
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body{
+        padding-top: 80px;
+    }
+    /* Further reduce font size for mobile */
+    .scholarships-text h1 {
+        font-size: 24px;
+    }
+
+    .scholarships-text h3 {
+        font-size: 18px;
+    }
+
+    .footer-copyright p {
+        font-size: 12px;
+        padding: 20px 0;
+    }
 }
 
