@@ -573,3 +573,160 @@ section {
     margin: 0;
 }
 
+/* Tablet (≤ 992px) */
+@media (max-width: 992px) {
+    .navigation a {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .left-section {
+        padding-right: 10px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .Welcome {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .sub-welc {
+        font-size: 16px;
+    }
+
+    .content-wrapper .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .content-wrapper .buttons button {
+        width: 150px;
+    }
+
+    .service-box {
+        flex: 1 1 calc(50% - 20px); /* 2 per row */
+    }
+
+    .main {
+        padding: 0 15px;
+    }
+
+    .footer-column {
+        min-width: 100px;
+    }
+}
+
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navigation {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .navigation a {
+        margin: 10px 10px 0 0;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .university-image {
+        position: relative;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .services-container {
+        gap: 20px;
+        margin-left: 0;
+    }
+
+    .service-box {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    #services {
+        height: auto;
+        padding: 40px 15px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .contact-box, .contact-text {
+        width: 100%;
+    }
+
+    #footer-links {
+        height: auto;
+        padding: 40px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* Small Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+    .Welcome {
+        font-size: 20px;
+    }
+
+    .sub-welc {
+        font-size: 14px;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .content-wrapper .buttons button {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .services-text h1,
+    .mission-text h1,
+    .about-text h1 {
+        font-size: 24px;
+    }
+
+    .services-text h3,
+    .mission-text h3,
+    .about-text h3 {
+        font-size: 18px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+}

@@ -34,6 +34,7 @@ header {
 /* Background */
 body {
     background: url('../../assets/signupbg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,4 +159,124 @@ button:hover {
 .login-link a:hover {
     text-decoration: underline;
     color: #f89648;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 40px 40px;
+        height: 100vh; /* Ensure the body takes the full height of the viewport */
+        align-items: center;
+        justify-content: center; /* Center the content vertically */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 420px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 20px 40px;
+        height: 100vh; /* Ensure the body takes the full height of the viewport */
+        align-items: center;
+        justify-content: center; /* Center the content vertically */
+    }
+
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .input-group input {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+        top: 11px;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:valid + label {
+        top: -15px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 15px 40px;
+        height: 100vh; /* Ensure the body takes the full height of the viewport */
+        align-items: center;
+        justify-content: center; /* Center the content vertically */
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-link,
+    .login-link a {
+        font-size: 13px;
+    }
+
+    .toggle-password {
+        right: 8px;
+    }
 }

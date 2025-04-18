@@ -165,3 +165,102 @@ span{
     text-decoration: underline;
     color: #f89648;
 }
+
+/* Make sure html and body cover full height */
+html, body {
+    height: 100%;
+    margin: 0; /* Reset margin */
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 30px 40px;
+        background-position: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 100px 20px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p, .login-link, span, .login-link a {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .input-group input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:valid + label {
+        font-size: 11px;
+    }
+
+    .toggle-password {
+        font-size: 14px;
+    }
+}

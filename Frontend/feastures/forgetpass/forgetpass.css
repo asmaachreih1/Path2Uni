@@ -129,3 +129,73 @@ button:hover {
     color: #fff;
 }
 
+/* Media Queries */
+
+/* For devices smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;  /* Add padding for smaller screens */
+        justify-content: center; /* Center content vertically */
+        align-items: center;
+        padding-top: 80px; /* Adjust padding for header */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 320px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+/* For larger tablets (e.g., iPad, iPad Air, iPad Pro, 768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding: 0 40px; /* Add padding for larger screens */
+        justify-content: flex-start; /* Keep top aligned but ensure it's centered horizontally */
+        align-items: center;
+        padding-top: 100px; /* Adjust for larger tablets */
+    }
+
+    .container {
+        width: 80%; /* Take 80% of the screen width */
+        max-width: 500px; /* Max width for better layout on tablets */
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+/* For very small screens like phones in portrait mode */
+@media (max-width: 480px) {
+    body {
+        padding: 0 15px; /* Further decrease padding for very small screens */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 280px;
+        margin-top: 15px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
