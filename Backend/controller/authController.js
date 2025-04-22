@@ -124,93 +124,68 @@ exports.signupUser = async (req, res) => {
     
 //leen
   
-//sign in handler
-//searches for the user in the database using email
-//if the email doesn’t exist it returns error 400
-//if the email exists it compares the entered pass with the stored hashed pass
-exports.signIn = async (req, res) => { 
-    console.log("Received Sign-in Request:", req.body); // Log incoming request
+exports.signIn = async (req, res) => {
+    console.log("Received Sign-in Request:", req.body);
+  
     try {
-         
-        console.log("Fetching all user emails from database...");
-        const users = await User.find({}, { email: 1, _id: 0 });
-        console.log("Stored Emails in Database:", users);
-
-
-        const { email, password } = req.body;
-        console.log("Received Sign-in Request:");
-        console.log("Email:", email);
-        console.log("Password:", password);
-         //check if email and pass is provided
-        if (!email || !password) {
-            console.log("Missing Email or Password");
-            return res.status(400).json({ message: "Email and password are required" });
-        }
-
-        //check if user exists
-        console.log("Searching for email in database:", email);
-        const user = await User.findOne({ email: { $regex: new RegExp(`^${email}$`, "i") } });
-
-
-
-        if (!user) {
-            console.log("User not found in database. Searching for:", email);
-            const allUsers = await User.find();
-            console.log("All Users in DB:", allUsers);
-            return res.status(400).json({ message: "Invalid email or password" });
-        }
-        console.log("Stored Password Hash:", user.password);
-
-        //validate password
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            console.log("Password Match:", isMatch);
-            return res.status(400).json({ message: "Invalid email or password" });
-        }
-
-        //creates a JWT token using the user's ID
-        //returns the token in the response for the frontend to use
-
-       /* const token = jwt.sign(
-            { userId: user._id },
-            process.env.JWT_SECRET,  // UPDATE FOR DELETE ACCOUNT
-            { expiresIn: "1h" }
-        );*/
-        const token = jwt.sign(
-            {
-              userId: user._id,
-              email: user.email,
-              isAdmin: user.isAdmin || false
-            },
-            process.env.JWT_SECRET,
-            { expiresIn: "1h" }
-          );//new 14/4
-          
-
-        // debugging 
-        // FOR delete account
-        console.log("JWT_SECRET being used for signin:", process.env.JWT_SECRET || 'fallback_secret');
-
-
-          //exclude pass before sending user data
-          const userData = {
-            id: user._id,
-            username: user.username,
-            email: user.email,
-            role: user.role,
-            isAdmin: user.isAdmin || false,//neww 14/4
-            grade: user.grade
-        };
-
-        //send response
-        console.log("Sign-in Successful!");
-        res.json({ token, user: userData, message: "Sign in successful" });
+      const { email, password } = req.body;
+  
+      // Step 1: Check input
+      if (!email || !password) {
+        console.log("Missing Email or Password");
+        return res.status(400).json({ message: "Email and password are required" });
+      }
+  
+      // Step 2: Find user by email
+      const user = await User.findOne({ email: { $regex: new RegExp(`^${email}$`, "i") } });
+  
+      if (!user) {
+        console.log("User not found for email:", email);
+        return res.status(400).json({ message: "Invalid email or password" });
+      }
+  
+      // Debug: Show password comparison data
+      console.log("Entered Password:", password);
+      console.log("Stored Password Hash:", user.password);
+  
+      // Step 3: Compare password
+      const isMatch = await bcrypt.compare(password, user.password);
+      console.log("Password Match Result:", isMatch);
+  
+      if (!isMatch) {
+        return res.status(400).json({ message: "Invalid email or password" });
+      }
+  
+      // Step 4: Generate JWT token
+      const token = jwt.sign(
+        {
+          userId: user._id,
+          email: user.email,
+          isAdmin: user.isAdmin || false,
+        },
+        process.env.JWT_SECRET || "defaultsecret",  // Added fallback here too
+        { expiresIn: "1h" }
+      );
+  
+      // Step 5: Prepare user data
+      const userData = {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+        isAdmin: user.isAdmin || false,
+        grade: user.grade,
+      };
+  
+      // Step 6: Send response
+      console.log("Sign-in Successful for:", email);
+      res.json({ token, user: userData, message: "Sign in successful" });
+  
     } catch (error) {
-        console.error("Sign-in Error:", error); //log error for debugging
-        res.status(500).json({ message: "Server error" })
+      console.error("Sign-in Error:", error);
+      res.status(500).json({ message: "Server error" });
     }
-};
-
+  };
 
 // SIGN OUT
 
