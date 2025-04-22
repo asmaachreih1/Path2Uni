@@ -55,41 +55,8 @@ router.post("/validate-credentials", asyncHandler(async (req, res) => {
 
 
 // Signup Route
-router.post("/signup", asyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
 
-  try {
-    console.log("📥 Sign-up request:", { username, email });
-
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    const newUser = new User({
-      username,
-      email,
-      password: hashedPassword
-    });
-
-    await newUser.save();
-
-    console.log("✅ User saved");
-
-    if (!process.env.JWT_SECRET) {
-      console.error("❌ JWT_SECRET is undefined!");
-      return res.status(500).json({ message: "JWT secret is missing" });
-    }
-
-    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-
-    console.log("✅ Token generated");
-
-    res.status(201).json({ message: "User registered successfully", token });
-  } catch (err) {
-    console.error("❌ Signup error:", err.stack); // <== FULL STACK TRACE
-    res.status(500).json({ message: "Server error. Please try again later." });
-  }
-}));
-
+router.post("/signup", signupUser);
 
 
 // careers Backend: (leen)
