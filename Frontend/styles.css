@@ -274,6 +274,7 @@ section {
     justify-content: center; /* Horizontally center the items */
     height: 100vh; /* Make the container take the full viewport height */
     margin-top: 70px;
+    margin-bottom: 90px;
 }
 
 .main {

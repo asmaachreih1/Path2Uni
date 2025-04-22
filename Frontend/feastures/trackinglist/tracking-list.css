@@ -288,3 +288,33 @@ ul li span:hover{
     color: #4b4296;
     border-radius: 50%;
 }
+@media (max-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .header-icons {
+        gap: 15px;
+    }
+
+    header i {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}
