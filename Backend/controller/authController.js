@@ -77,6 +77,55 @@ exports.resetPassword = async (req, res) => {
     }
 };
 
+// sign up
+exports.signupUser = async (req, res) => {
+    try {
+      const { username, email, password } = req.body;
+  
+      // 1. Validate input
+      if (!username || !email || !password) {
+        return res.status(400).json({ message: "All fields are required." });
+      }
+  
+      // 2. Check if user already exists
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(409).json({ message: "User already exists with this email." });
+      }
+  
+      // 3. Hash the password
+const salt = await bcrypt.genSalt(10);
+const hashedPassword = await bcrypt.hash(password, salt);
+
+console.log("Plain password:", password);  // Log the plain password
+console.log("Hashed password:", hashedPassword); // Log the hashed password
+
+// 4. Create a new user without verification
+const newUser = new User({
+  username,
+  email,
+  password: hashedPassword,
+});
+
+  
+      await newUser.save();
+  
+      // 5. Generate JWT token
+      const token = jwt.sign(
+        { userId: newUser._id, email: newUser.email },
+        process.env.JWT_SECRET || "defaultsecret",
+        { expiresIn: "7d" }
+      );
+  
+      res.status(201).json({
+        message: "User registered successfully.",
+        token,
+      });
+    } catch (error) {
+      console.error("Signup error:", error);
+      res.status(500).json({ message: "Server error. Please try again later." });
+    }
+  };
 //leen
   
 //sign in handler
