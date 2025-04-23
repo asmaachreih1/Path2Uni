@@ -103,9 +103,10 @@ exports.deleteTask = async (req, res) => {
 };
 
 exports.toggleTask = async (req, res) => {
-    const task = await Task.findOne({ _id: req.params.id, userId: req.user.id });
+    const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
     task.checked = !task.checked;
     await task.save();
     res.json(task);
 };
+
 
