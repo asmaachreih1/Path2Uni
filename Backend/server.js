@@ -46,6 +46,8 @@ mongoose.connect(mongoURI, {
 .then(() => console.log('MongoDB Connected Successfully!'))
 .catch((err) => console.error('MongoDB Connection Failed:', err));
 
+app.use('/api/tasks', taskRoutes);
+
 // ✅ Serve static frontend files
 app.use(express.static(path.join(__dirname, '../Frontend')));
 
