@@ -71,7 +71,7 @@ listContainer.addEventListener("click", async (e) => {
         });
         li.classList.toggle("checked");
     } else if (e.target.tagName === "SPAN") {
-        await 
+        await fetch
 
             method: "DELETE",
             headers: { 'Authorization': `Bearer ${token}` }
