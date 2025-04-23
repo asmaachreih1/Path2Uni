@@ -98,7 +98,7 @@ exports.addTask = async (req, res) => {
   
 
 exports.deleteTask = async (req, res) => {
-    await Task.findOneAndDelete({ _id: req.params.id, userId: req.user.
+    await Task.findOneAndDelete({ _id: req.params.id, userId: req.user.userId });
     res.sendStatus(204);
 };
 
