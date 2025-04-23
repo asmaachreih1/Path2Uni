@@ -71,7 +71,8 @@ listContainer.addEventListener("click", async (e) => {
         });
         li.classList.toggle("checked");
     } else if (e.target.tagName === "SPAN") {
-        await fetch(`${API_URL}/${id}`, {
+        await 
+
             method: "DELETE",
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -80,3 +81,4 @@ listContainer.addEventListener("click", async (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", loadTasks);
+
