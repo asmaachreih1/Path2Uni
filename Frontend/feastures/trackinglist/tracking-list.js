@@ -64,7 +64,7 @@ listContainer.addEventListener("click", async (e) => {
     const li = e.target.closest("li");
     const id = li.dataset.id;
     if (e.target.tagName === "LI") {
-        await fetch(`${API_BASE_URL}/toggle/${id}`, {
+        await fetch(`${API_BASE_URL}/api/tasks/toggle/${id}`, {
 
             method: "PUT",
             headers: { 'Authorization': `Bearer ${token}` }
