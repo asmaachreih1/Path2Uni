@@ -40,7 +40,7 @@ async function addTask() {
   
     const token = localStorage.getItem("token");  // Get token from localStorage or wherever you store it
   
-    const res = await fetch("http://localhost:5001/api/tasks", {  // Check your backend URL here
+    const res = await fetch(`${API_BASE_URL}/api/tasks`, {  // Check your backend URL here
       method: "POST",
       headers: {
         "Content-Type": "application/json",
